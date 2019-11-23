@@ -35,9 +35,24 @@ namespace ScriptableSystems
 
             OnInitializedEvent.Raise();
         }
-        public abstract void Deinitialize();
-        public abstract void Start();
-        public abstract void Stop();
-        //Base GameEvents ? 
+
+        public virtual void Deinitialize()
+        {
+            //   Debug.Log("ScriptableExecutor.Deinitialize");
+
+        }
+        public virtual void Start()
+        {
+
+            Debug.Log("ScriptableExecutor.Start");
+
+        }
+        public virtual void Stop()
+        {
+            Debug.Log("ScriptableExecutor.Stop");
+
+
+        }
+
     }
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50db691cb33eb2f449935af949c4a592, type: 3}
+  m_Name: BuildSystemStandard
+  m_EditorClassIdentifier: 
+  id: BuildSystemStandardId
+  initializeOnStart: 1
+  monoBehaviourScript: {fileID: 11500000, guid: 222e69059009ee14ba8a3752888fe0aa,
+    type: 3}
+  OnInitializedEvent: {fileID: 11400000, guid: 3969283df8bc07f40928ebf213a8ebc1, type: 2}
+  OnStartEvent: {fileID: 11400000, guid: 1776dc3504523474abea732da5499077, type: 2}
+  OnStopEvent: {fileID: 11400000, guid: fbf32fa84de438e45b2748775c2197e3, type: 2}
+  buildObjects: {fileID: 0}
+  availableColor: {r: 0, g: 1, b: 0, a: 0.2}
+  unavailableColor: {r: 1, g: 0, b: 0, a: 0.2}
+  previewMaterial: {fileID: 0}
