@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BuildSystemStandard
   m_EditorClassIdentifier: 
   id: BuildSystemStandardId
-  initializeOnStart: 1
+  initializeOnStart: 0
   monoBehaviourScript: {fileID: 11500000, guid: 222e69059009ee14ba8a3752888fe0aa,
     type: 3}
   OnInitializedEvent: {fileID: 11400000, guid: 3969283df8bc07f40928ebf213a8ebc1, type: 2}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿#if false
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ using UnityEngine;
 
 namespace ScriptableSystems
 {
+    [CreateAssetMenu(fileName = "ScriptableSystem", menuName = "ScriptableSystems/Executors/UniversalExecutor")]
+
     public class UniversalExecutor : ScriptableExecutor
     {
 
@@ -13,3 +16,4 @@ namespace ScriptableSystems
 
     }
 }
+#endif

@@ -16,7 +16,7 @@ namespace ScriptableSystems
         }
          void Update()
         {
-            
+            /*
 
             if (scriptableExecutorData != null)
             {
@@ -24,7 +24,7 @@ namespace ScriptableSystems
 
                 scriptableExecutorData.ExecuteMethod.Execute();
             }
-            
+            */
         }
         
     }

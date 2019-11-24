@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿#if (false) 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,3 +20,4 @@ namespace ScriptableSystems
     }
     
 }
+#endif
