@@ -11,9 +11,14 @@ namespace ScriptableSystems
     {
         public ScriptableExecuteMethodBase ExecuteMethod;
         public GameEvent ExecuteOnEvent;
+
+        public GameEvent EventToStart;
+        public GameEvent EventToStop;
+
         //public GameObject prefab;
         public int updateInterval;
 
+        public bool isStarted;
         public override void Initialize(GameObject obj)
         {
             obj.name = id;
@@ -22,11 +27,17 @@ namespace ScriptableSystems
             {
 
                 ScriptableSystemMB scriptableSystemMB = obj.AddComponent(monoBehaviourScript.GetClass()) as ScriptableSystemMB;
+
+                
                 if (scriptableSystemMB != null)
                 {
 
                     scriptableSystemMB.Init(this);
                 }
+                GameEventListener gameEventListener = obj.AddComponent<GameEventListener>();
+                gameEventListener.Event = EventToStart;
+                
+
             }
 
             // Debug.Log("Base ScriptableSystem.Initialize():+"+ obj.name);
@@ -34,18 +45,18 @@ namespace ScriptableSystems
             OnInitializedEvent.Raise();
         }
 
-        public override  void Deinitialize()
+        public virtual  void Deinitialize()
         {
             Debug.Log("ScriptableExecutor.Deinitialize");
             
         }
-        public override void  Start()
+        public virtual void  Start()
         {
 
                Debug.Log("ScriptableExecutor.Start");
 
         }
-        public override void Stop()
+        public virtual void Stop()
         {
             Debug.Log("ScriptableExecutor.Stop");
 

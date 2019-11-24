@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-
 namespace ScriptableSystems.BuildSystem
 {
-    // Class: BuildSystemMonoBehaviour
-    // MonoBehaviour "hookup" script for scene representation of ScriptableBuildSystem  ,Outdated, to be separated into smaller systems
     public class BuildSystemMonoBehaviour : MonoBehaviour
     {
         public Color availableColor = new Color(0, 1.0f, 0, 0.2f);
