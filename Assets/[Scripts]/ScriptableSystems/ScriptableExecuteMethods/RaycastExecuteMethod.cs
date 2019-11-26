@@ -17,6 +17,7 @@ namespace ScriptableSystems
         {
 
              output=Physics.Raycast(Vector3.up, Vector3.forward, out raycastHit, 10.0f, LayerMask.NameToLayer("Floor"));
+            
             Debug.Log("output"+ output);
 
         }

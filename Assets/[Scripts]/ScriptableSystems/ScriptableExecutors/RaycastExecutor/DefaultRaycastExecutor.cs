@@ -17,16 +17,41 @@ namespace ScriptableSystems
             {
 
                 RaycastExecutorMB scriptableSystemMB = obj.AddComponent(monoBehaviourScript.GetClass()) as RaycastExecutorMB;
+
+
                 if (scriptableSystemMB != null)
                 {
 
                     scriptableSystemMB.Init(this);
                 }
+                GameEventListener gameEventStartListener = obj.AddComponent<GameEventListener>();
+                gameEventStartListener.Event = EventToStart;
+                // gameEventStartListener.Response = Start;
+
+            }
+            else
+            {
+                GameObject MBInstance = GameObject.Instantiate(prefab, obj.transform);
+                RaycastExecutorMB scriptableSystemMB = MBInstance.GetComponent<RaycastExecutorMB>();
+
+                if (scriptableSystemMB != null)
+                {
+
+                    scriptableSystemMB.Init(this);
+                }
+                //GameEventListener gameEventStartListener = obj.AddComponent<GameEventListener>();
+                //  gameEventStartListener.Event = EventToStart;
+                // gameEventStartListener.Response = Start;
             }
 
             // Debug.Log("Base ScriptableSystem.Initialize():+"+ obj.name);
 
             OnInitializedEvent.Raise();
+        }
+
+        public override void Start()
+        {
+            base.Start();
         }
     }
 }

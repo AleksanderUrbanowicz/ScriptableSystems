@@ -15,10 +15,10 @@ namespace ScriptableSystems
         public GameEvent EventToStart;
         public GameEvent EventToStop;
 
-        //public GameObject prefab;
+        public GameObject prefab;
         public int updateInterval;
 
-        public bool isStarted;
+        public bool isExecuting;
         public override void Initialize(GameObject obj)
         {
             obj.name = id;
@@ -26,18 +26,32 @@ namespace ScriptableSystems
             if (monoBehaviourScript != null)
             {
 
-                ScriptableSystemMB scriptableSystemMB = obj.AddComponent(monoBehaviourScript.GetClass()) as ScriptableSystemMB;
+                ScriptableExecutorMB scriptableSystemMB = obj.AddComponent(monoBehaviourScript.GetClass()) as ScriptableExecutorMB;
 
-                
+
                 if (scriptableSystemMB != null)
                 {
 
                     scriptableSystemMB.Init(this);
                 }
-                GameEventListener gameEventListener = obj.AddComponent<GameEventListener>();
-                gameEventListener.Event = EventToStart;
-                
+                GameEventListener gameEventStartListener = obj.AddComponent<GameEventListener>();
+                gameEventStartListener.Event = EventToStart;
+                // gameEventStartListener.Response = Start;
 
+            }
+            else
+            {
+              GameObject MBInstance=  GameObject.Instantiate(prefab, obj.transform);
+                ScriptableExecutorMB scriptableSystemMB = MBInstance.GetComponent<ScriptableExecutorMB>();
+
+                if (scriptableSystemMB != null)
+                {
+
+                    scriptableSystemMB.Init(this);
+                }
+                //GameEventListener gameEventStartListener = obj.AddComponent<GameEventListener>();
+              //  gameEventStartListener.Event = EventToStart;
+                // gameEventStartListener.Response = Start;
             }
 
             // Debug.Log("Base ScriptableSystem.Initialize():+"+ obj.name);
@@ -52,12 +66,13 @@ namespace ScriptableSystems
         }
         public virtual void  Start()
         {
-
+            isExecuting = true;
                Debug.Log("ScriptableExecutor.Start");
 
         }
         public virtual void Stop()
         {
+            isExecuting = false;
             Debug.Log("ScriptableExecutor.Stop");
 
 
