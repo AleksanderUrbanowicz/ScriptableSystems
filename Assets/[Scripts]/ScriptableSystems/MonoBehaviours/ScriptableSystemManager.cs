@@ -10,7 +10,7 @@ namespace ScriptableSystems
     {
         
         public List<ScriptableSystem> scriptableSystems=new List<ScriptableSystem>();
-        public List<ScriptableExecutor> scriptableTools = new List<ScriptableExecutor>();
+       // public List<ScriptableExecutor> scriptableTools = new List<ScriptableExecutor>();
         void Start()
         {
             foreach(ScriptableSystem scriptableSystem in scriptableSystems)

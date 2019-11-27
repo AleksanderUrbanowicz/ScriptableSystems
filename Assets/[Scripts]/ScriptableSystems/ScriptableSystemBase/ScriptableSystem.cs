@@ -20,16 +20,17 @@ namespace ScriptableSystems
         public virtual void Initialize(GameObject obj)
         { 
              obj.name = id;
-
+            
             if (monoBehaviourScript != null)
             {
-                ScriptableSystemMB scriptableSystemMB = obj.AddComponent(monoBehaviourScript.GetClass()) as ScriptableSystemMB;
-                if (scriptableSystemMB != null)
-                {
+               // MonoBehaviour scriptableSystemMB = obj.AddComponent(monoBehaviourScript.GetClass()) as MonoBehaviour;
+              //  if (scriptableSystemMB != null)
+               // {
 
-                    scriptableSystemMB.Init(this);
-                }
+                   // scriptableSystemMB.Init(this);
+               // }
             }
+            
 
            
 

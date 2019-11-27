@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace ScriptableSystems
 {
-    public class ScriptableSystemEventListener : MonoBehaviour
+    public class ScriptableEventListener : MonoBehaviour
     {
         [Tooltip("Event to register with.")]
         public ScriptableEvent Event;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+#if (false)
 namespace ScriptableSystems
 {
 
@@ -81,3 +81,4 @@ namespace ScriptableSystems
     }
 
 }
+#endif

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+#if (false)
 namespace ScriptableSystems
 {
     [CreateAssetMenu(fileName = "DefaultRaycastExecutor", menuName = "ScriptableSystems/ScriptableExecutors/Default Raycast Executor")]
@@ -61,3 +61,4 @@ namespace ScriptableSystems
         }
     }
 }
+#endif

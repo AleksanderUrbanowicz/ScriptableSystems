@@ -7,12 +7,19 @@ namespace ScriptableSystems
 {
     // Class: CustomScriptableSystemMB
     //  MonoBehaviour "hookup" script for scene representation of ScriptableBuildSystem hierarchy level
-    public class ScriptableBuildSystemMB : ScriptableSystemMB
+    public class ScriptableBuildSystemMB : MonoBehaviour
     {
-        public override void Init(ScriptableSystem scriptableSystem)
+
+
+        private void Start()
         {
-            scriptableSystemData = scriptableSystem;
-           // Debug.Log(scriptableSystemData.id + ".OverrideInit,Type: " + this.GetType());
+            Debug.Log("ScriptableBuildSystemMB. Start()");
+        }
+
+        public void Init(ScriptableBuildSystem scriptableBuildSystem)
+        {
+            Debug.Log("ScriptableBuildSystemMB. Init(): "+ scriptableBuildSystem.id);
+
         }
 
     }

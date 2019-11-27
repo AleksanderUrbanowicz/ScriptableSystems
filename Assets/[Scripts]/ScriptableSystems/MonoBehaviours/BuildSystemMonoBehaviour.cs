@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-namespace ScriptableSystems.BuildSystem
+
+//TO REIMPLEMENT
+
+namespace ScriptableSystems
 {
     public class BuildSystemMonoBehaviour : MonoBehaviour
     {
@@ -39,6 +42,12 @@ namespace ScriptableSystems.BuildSystem
         public Vector3 collisionCenterDebug;
         public Vector3 collisionNormal;
         public Vector3 cornerAxisVector = new Vector3(-5, 0, -5);
+
+        public void Init(ScriptableBuildSystem scriptableBuildSystem)
+        {
+            Debug.Log("BuildSystemMonoBehaviour. Init(): " + scriptableBuildSystem.id);
+            availableColor = scriptableBuildSystem.availableColor;
+        }
 
         private void Start()
         {
