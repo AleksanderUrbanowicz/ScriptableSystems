@@ -9,6 +9,9 @@ namespace ScriptableSystems
 
     public class DefaultRaycastExecutor : ScriptableExecutor
     {
+        public Transform target;
+        public LayerMask layer;
+
         public override void Initialize(GameObject obj)
         {
             obj.name = id;
@@ -37,14 +40,12 @@ namespace ScriptableSystems
                 if (scriptableSystemMB != null)
                 {
 
-                    scriptableSystemMB.Init(this);
+                    scriptableSystemMB.Init(this,target,layer);
+                  
                 }
-                //GameEventListener gameEventStartListener = obj.AddComponent<GameEventListener>();
-                //  gameEventStartListener.Event = EventToStart;
-                // gameEventStartListener.Response = Start;
+               
             }
 
-            // Debug.Log("Base ScriptableSystem.Initialize():+"+ obj.name);
 
             OnInitializedEvent.Raise();
         }
@@ -52,6 +53,11 @@ namespace ScriptableSystems
         public override void Start()
         {
             base.Start();
+        }
+
+        public override void Stop()
+        {
+            base.Stop();
         }
     }
 }

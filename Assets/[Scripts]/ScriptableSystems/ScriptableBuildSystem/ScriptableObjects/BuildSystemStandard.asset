@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BuildSystemStandard
   m_EditorClassIdentifier: 
   id: BuildSystemStandardId
-  initializeOnStart: 0
+  initializeOnStart: 1
   monoBehaviourScript: {fileID: 11500000, guid: 222e69059009ee14ba8a3752888fe0aa,
     type: 3}
   OnInitializedEvent: {fileID: 11400000, guid: 3969283df8bc07f40928ebf213a8ebc1, type: 2}
@@ -23,3 +23,6 @@ MonoBehaviour:
   availableColor: {r: 0, g: 1, b: 0, a: 0.2}
   unavailableColor: {r: 1, g: 0, b: 0, a: 0.2}
   previewMaterial: {fileID: 0}
+  cam: {fileID: 0}
+  buildObjectsParent: {fileID: 0}
+  defaultRaycast: {fileID: 11400000, guid: cb01cd5d4df5a8b4381c17f6a4a82fec, type: 2}

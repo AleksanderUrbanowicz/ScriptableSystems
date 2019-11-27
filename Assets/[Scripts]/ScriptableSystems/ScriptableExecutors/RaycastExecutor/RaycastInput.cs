@@ -9,9 +9,9 @@ namespace ScriptableSystems
 {
     public struct RaycastInput 
     {
-        Transform transformToFollow;
-        LayerMask layerMask;
+       public Transform transformToFollow;
+       public LayerMask layerMask;
         //read from asset ?
-        float raycastDistance;
+      public  float raycastDistance;
     }
 }

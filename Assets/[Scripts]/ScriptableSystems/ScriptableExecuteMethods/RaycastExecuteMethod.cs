@@ -16,7 +16,7 @@ namespace ScriptableSystems
         public override void Execute()
         {
 
-             output=Physics.Raycast(Vector3.up, Vector3.forward, out raycastHit, 10.0f, LayerMask.NameToLayer("Floor"));
+             output=Physics.Raycast(Vector3.up, Vector3.forward, out raycastHit, 10.0f, raycastInput.layerMask);
             
             Debug.Log("output"+ output);
 

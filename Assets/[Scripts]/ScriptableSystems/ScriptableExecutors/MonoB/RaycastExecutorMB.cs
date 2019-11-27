@@ -12,9 +12,10 @@ namespace ScriptableSystems
         public ScriptableSystemEventListener startListener;
         public ScriptableSystemEventListener stopListener;
 
-        public void Init(DefaultRaycastExecutor scriptableSystem)
+        public void Init(DefaultRaycastExecutor scriptableSystem, Transform _target,LayerMask mask)
         {
             defaultRaycastExecutor = scriptableSystem;
+            defaultRaycastExecutor.target = _target;
             startListener.Event = defaultRaycastExecutor.OnStartEvent;
             stopListener.Event = defaultRaycastExecutor.OnStopEvent;
             Debug.Log(defaultRaycastExecutor.id + ".OverrideInit,Type: " + this.GetType());
@@ -52,10 +53,15 @@ namespace ScriptableSystems
          
         }
 
-        public void StartExecute()
+        public void StartExecute(Transform target, LayerMask layerMask)
         {
-             Debug.Log(defaultRaycastExecutor.id + "StartExecute:  " + this.gameObject.name);
-            defaultRaycastExecutor.Start();
+            if(defaultRaycastExecutor.target!=null)
+            {
+
+                Debug.Log(defaultRaycastExecutor.id + "StartExecute:  " + this.gameObject.name);
+                defaultRaycastExecutor.Start();
+            }
+            
 
         }
 
