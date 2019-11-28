@@ -28,5 +28,5 @@ MonoBehaviour:
     m_Bits: 2048
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 2097152
+    m_Bits: 2105344
   collsionBoundsFraction: 0.95

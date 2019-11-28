@@ -22,6 +22,7 @@ MonoBehaviour:
   buildObjectLayer:
     serializedVersion: 2
     m_Bits: 2097152
+  buildObjectLayerString: Object
   buildObjects: {fileID: 11400000, guid: 398aba327bae6134990033c654fe9dec, type: 2}
   availableColor: {r: 0, g: 1, b: 0, a: 0.08627451}
   unavailableColor: {r: 1, g: 0, b: 0, a: 0.08627451}
@@ -30,5 +31,6 @@ MonoBehaviour:
     type: 2}
   EventPreviewRaycastMiss: {fileID: 11400000, guid: 5cf040e246681374699b98ee25d0109f,
     type: 2}
-  raycastInterval: 3
+  raycastInterval: 5
+  updateInterval: 1
   logs: 0

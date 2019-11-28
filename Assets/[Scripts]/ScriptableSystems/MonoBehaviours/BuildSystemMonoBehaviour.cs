@@ -11,15 +11,15 @@ namespace ScriptableSystems
     {
         public BuildSystemRaycast buildSystemRaycast;
 
-        public Color availableColor = new Color(0, 1.0f, 0, 0.2f);
-        public Color unavailableColor = new Color(1.0f, 0, 0, 0.2f);
-        public Material previewMaterial;
+        private Color availableColor = new Color(0, 1.0f, 0, 0.2f);
+        private Color unavailableColor = new Color(1.0f, 0, 0, 0.2f);
+        private Material previewMaterial;
 
         public List<BuildObjectData> buildObjectsData = new List<BuildObjectData>();
         private BuildObjectData currentBuildObject;
         public int currentBuildObjectIndex = 0;
-        public Quaternion rotation;
-        public Quaternion userRotation;
+        private Quaternion rotation;
+        private Quaternion userRotation;
 
         public float userRotationF;
         private GameObject currentPreviewGameObject;
@@ -34,34 +34,40 @@ namespace ScriptableSystems
         private RaycastHit raycastHit;
 
 
-        public float raycastMaxDistance = 12.0f;
+   
         public float offset = 1.0f;
         public float gridSize = 1.0f;
         public float previewSnapFactor = 1.0f;
         public float mainAxisLength = 15.0f;
 
-        private bool canBuild;
+        private bool canBeBuild;
         private bool isBuilding;
         private bool isShowingPreview;
+
         public Vector3 collisionCenterDebug;
         public Vector3 collisionNormal;
         public Vector3 cornerAxisVector = new Vector3(-5, 0, -5);
-
+        public int counter;
         public ScriptableBuildSystem scriptableBuildSystem;
-        ScriptableEvent ScriptableEventStart;
-        ScriptableEvent ScriptableEventStop;
-
+       
         public ScriptableEventListener scriptableEventListenerOnHit;
         public ScriptableEventListener scriptableEventListenerOnMiss;
         public void Init(ScriptableBuildSystem _scriptableBuildSystem)
         {
             scriptableBuildSystem = _scriptableBuildSystem;
-            Debug.Log("BuildSystemMonoBehaviour. Init(): " + _scriptableBuildSystem.id);
-            ScriptableEventStart = _scriptableBuildSystem.OnStartEvent;
-            ScriptableEventStop = _scriptableBuildSystem.OnStopEvent;
+          
+            InitRaycaster(_scriptableBuildSystem);
+            InitEventListeners(_scriptableBuildSystem);
 
-            buildSystemRaycast = new GameObject("buildSystemRaycast").AddComponent<BuildSystemRaycast>();
-            buildSystemRaycast.gameObject.transform.parent = gameObject.transform;
+            availableColor = _scriptableBuildSystem.availableColor;
+            unavailableColor = _scriptableBuildSystem.unavailableColor;
+            previewMaterial = _scriptableBuildSystem.previewMaterial;
+            buildObjectsData = _scriptableBuildSystem.buildObjects.items;
+      
+        }
+
+        public void InitEventListeners(ScriptableBuildSystem _scriptableBuildSystem)
+        {
             scriptableEventListenerOnHit = new GameObject("scriptableEventListenerOnHit").AddComponent<ScriptableEventListener>();
             scriptableEventListenerOnHit.gameObject.transform.parent = gameObject.transform;
             scriptableEventListenerOnHit.Response = new UnityEngine.Events.UnityEvent();
@@ -70,11 +76,6 @@ namespace ScriptableSystems
             scriptableEventListenerOnMiss.gameObject.transform.parent = gameObject.transform;
             scriptableEventListenerOnMiss.Response = new UnityEngine.Events.UnityEvent();
 
-            availableColor = _scriptableBuildSystem.availableColor;
-            unavailableColor = _scriptableBuildSystem.unavailableColor;
-            previewMaterial = _scriptableBuildSystem.previewMaterial;
-            buildObjectsData = _scriptableBuildSystem.buildObjects.items;
-            buildSystemRaycast.Init(_scriptableBuildSystem);
             scriptableEventListenerOnHit.Event = _scriptableBuildSystem.EventPreviewRaycastHit;
             scriptableEventListenerOnHit.Response.AddListener(() => HandlePreviewHit());
             scriptableEventListenerOnHit.Validate();
@@ -82,75 +83,78 @@ namespace ScriptableSystems
             scriptableEventListenerOnMiss.Event = _scriptableBuildSystem.EventPreviewRaycastMiss;
             scriptableEventListenerOnMiss.Response.AddListener(() => HandlePreviewMiss());
             scriptableEventListenerOnMiss.Validate();
-
         }
 
+        public void InitRaycaster(ScriptableBuildSystem _scriptableBuildSystem)
+        {
+            buildSystemRaycast = new GameObject("buildSystemRaycast").AddComponent<BuildSystemRaycast>();
+            buildSystemRaycast.gameObject.transform.parent = gameObject.transform;
+            buildSystemRaycast.Init(_scriptableBuildSystem);
+
+        }
         private void Start()
         {
             if (buildObjectsParent == null)
             {
                 buildObjectsParent = new GameObject("BuildObjects").transform;
-               // buildObjectsParent.parent = gameObject.transform;
             }
-            if (isBuilding)
-            {
-                CustomStart();
-
-            }
+         
 
         }
 
         void Update()
         {
-
-
-            if (isBuilding)
+            counter++;
+            if (counter >= scriptableBuildSystem.updateInterval)
             {
-                if (Input.GetKeyDown(KeyCode.N))
-                {
-                    currentBuildObjectIndex++;
-                    CancelPreview();
-                    CustomStart();
-                }
-                if (Input.GetKeyDown(KeyCode.R))
-                {
-                    RotatePreview(currentPreviewObject);
-                }
-                if (Input.GetKeyDown(KeyCode.B))
-                {
-                    isBuilding = !isBuilding;
-                    CancelPreview();
-                }
-                // StartRaycastPreview();
-               // CustomStart();
-               if(isShowingPreview)
-                {
-                    ShowPreview();
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
 
-                        BuildPreviewObject();
+                if (isBuilding)
+                {
+                    if (Input.GetKeyDown(KeyCode.N))
+                    {
+                        currentBuildObjectIndex++;
+                        CancelPreview();
                         CustomStart();
+                    }
+                    if (Input.GetKeyDown(KeyCode.R))
+                    {
+                        RotatePreview(currentPreviewObject);
+                    }
+                    if (Input.GetKeyDown(KeyCode.B))
+                    {
+                        isBuilding = !isBuilding;
+                        CancelPreview();
+                    }
+
+                    if (isShowingPreview)
+                    {
+                        ShowPreview();
+                        if (canBeBuild && Input.GetKeyDown(KeyCode.E))
+                        {
+
+                            BuildPreviewObject();
+                            CustomStart();
+                        }
+
+                    }
+
+                }
+                else
+                {
+
+                    if (Input.GetKeyDown(KeyCode.B))
+                    {
+                        isBuilding = !isBuilding;
+
+
+                        CustomStart();
+
+
                     }
 
 
                 }
-
-            }
-            else
-            {
-
-                if (Input.GetKeyDown(KeyCode.B))
-                {
-                    isBuilding = !isBuilding;
-                   
-
-                    CustomStart();
-                   // StartRaycastPreview();
-
-                }
-                //CancelPreview();
-
+                counter = 0;
             }
 
         }
@@ -161,8 +165,6 @@ namespace ScriptableSystems
             currentBuildObject = buildObjectsData[currentBuildObjectIndex];
             CancelPreview();
             InstantiatePreview();
-
-            //ShowPreview(raycastHit.point, raycastHit.normal);
 
             StartRaycastPreview();
 
@@ -177,9 +179,9 @@ namespace ScriptableSystems
             currentPreviewGameObject.name = "PreviewPrefab";
             currentPreviewObject = currentBuildObject;
             currentPreviewGameObject.transform.localPosition += currentBuildObject.offset;
-            //currentPreviewGameObject.SetActive(false);
+            
             currentPreview = currentPreviewGameObject.transform;
-            AddPreviewCollider(currentPreviewGameObject, currentPreviewObject);
+           // AddPreviewCollider(currentPreviewGameObject, currentPreviewObject);
             AddPreviewMesh(currentPreviewGameObject, currentPreviewObject);
         }
 
@@ -187,30 +189,24 @@ namespace ScriptableSystems
         public void BuildPreviewObject()
         {
            
-            rotation = Quaternion.identity;
+            //rotation = Quaternion.identity;
             GameObject go = Instantiate(currentBuildObject.objectPrefab, currentPosition, rotation);
             go.name = currentBuildObject.id;
             go.layer = LayerMask.NameToLayer(scriptableBuildSystem.buildObjectLayerString);
-           // go.transform.parent = buildObjectsParent;
+            go.transform.parent = buildObjectsParent;
             AddPreviewCollider(go, currentPreviewObject);
         }
         
 
         public void StartRaycastPreview()
         {
-            //buildSystemRaycast.layersToBuildOn = currentPreviewObject.layersToBuildOn;
+           
             buildSystemRaycast.StartExecute(currentPreviewObject.layersToBuildOn);
-            // CustomStart();
-            // if (Physics.Raycast(cam.position, cam.forward, out raycastHit, raycastMaxDistance, currentPreviewObject.layersToBuildOn))
-            //  {
-            //     if (raycastHit.transform != this.transform)
-            //    { ShowPreview(raycastHit.point, raycastHit.normal); }
-            //  }
-
+   
         }
         public void CancelPreview()
         {
-           if(scriptableBuildSystem.logs) Debug.LogError("CancelPreview");
+           if(scriptableBuildSystem.logs) Debug.Log("CancelPreview");
             if (currentPreviewGameObject != null)
             {
                 Destroy(currentPreviewGameObject);
@@ -223,11 +219,14 @@ namespace ScriptableSystems
 
         public void HandlePreviewHit()
         {
+            if (scriptableBuildSystem.logs) Debug.Log("HandlePreviewHit");
             isShowingPreview = true;
 
         }
         public void HandlePreviewMiss()
         {
+            if (scriptableBuildSystem.logs) Debug.Log("HandlePreviewMiss");
+
             isShowingPreview = false;
 
         }
@@ -235,9 +234,17 @@ namespace ScriptableSystems
         public void ShowPreview()
         {
 
-            if (scriptableBuildSystem.logs) Debug.LogError("ShowPreview");
-          Vector3  point = buildSystemRaycast.raycastHit.point;
-            Vector3 normal = buildSystemRaycast.raycastHit.normal;
+            if (scriptableBuildSystem.logs) Debug.Log("ShowPreview");
+            if(raycastHit.point == buildSystemRaycast.raycastHit.point)
+            {
+
+                if (scriptableBuildSystem.logs) Debug.LogError("ShowPreview: Hit.point have not changed");
+                return;
+            }
+            raycastHit = buildSystemRaycast.raycastHit;
+
+          Vector3  point = raycastHit.point;
+            Vector3 normal = raycastHit.normal;
 
             
             if (currentPreviewObject == null)
@@ -251,46 +258,48 @@ namespace ScriptableSystems
 
             float distance = Vector3.Distance(currentPosition, point);
             sb.AppendLine("Distance: " + distance);
-            if (distance > (previewSnapFactor * gridSize))
+            if (distance > (previewSnapFactor * gridSize) )
             {
-
-                collisionNormal = normal;
-
-                rotation = Quaternion.FromToRotation(currentPreviewObject.orientationVector, collisionNormal);
-                rotation *= Quaternion.Euler(currentPreviewObject.orientationVector * userRotationF);
-
-                currentPosition = point;
-                currentPosition -= Vector3.one * offset;
-                currentPosition /= gridSize;
-                currentPosition = new Vector3(Mathf.Round(currentPosition.x), Mathf.Round(currentPosition.y), Mathf.Round(currentPosition.z));
-                currentPosition *= gridSize;
-                currentPosition += Vector3.one * offset;
-
-                currentPreview.position = currentPosition;
-
-                currentPreview.rotation = rotation;
-               // Debug.LogError(sb.ToString());
-
+        
+                CalculatePreview(point,normal);
                 CheckObject();
             }
-            else
-            //   if (currentPreview.rotation != rotation)
-            {
-               // sb.AppendLine("distance too small");
-                //   Debug.LogError(sb.ToString());
+         
 
-                // rotation = Quaternion.FromToRotation(currentPreviewObject.orientationVector, collisionNormal);
-                //     currentPreview.rotation = rotation;
-                CheckObject();
-            }
 
+        }
+
+        public void CalculatePreview(Vector3 _point, Vector3 _normal)
+        {
+            collisionNormal = _normal;
+
+            rotation = Quaternion.FromToRotation(currentPreviewObject.orientationVector, collisionNormal);
+            rotation *= Quaternion.Euler(currentPreviewObject.orientationVector * userRotationF);
+
+            currentPosition = _point;
+            currentPosition -= Vector3.one * offset;
+            currentPosition /= gridSize;
+            currentPosition = new Vector3(Mathf.Round(currentPosition.x), Mathf.Round(currentPosition.y), Mathf.Round(currentPosition.z));
+            currentPosition *= gridSize;
+            currentPosition += Vector3.one * offset;
+
+            currentPreview.position = currentPosition;
+
+            currentPreview.rotation = rotation;
 
         }
 
         public bool CheckAvailability()
         {
-            //  Debug.Log("CheckAvailability");
+            if (scriptableBuildSystem.logs) Debug.Log("CheckAvailability");
             collisionCenterDebug = currentPreview.position + previewCollider.center;
+            Vector3 halfEx = previewCollider.bounds.extents * currentPreviewObject.collsionBoundsFraction;
+            halfEx.x *= previewCollider.transform.localScale.x;
+            halfEx.y *= previewCollider.transform.localScale.y;
+            halfEx.z *= previewCollider.transform.localScale.z;
+
+            Debug.Log("halfEx:"+ halfEx); 
+                 Debug.Log("previewCollider.bounds.extents:" + previewCollider.bounds.extents);
             Collider[] hitColliders = Physics.OverlapBox(currentPreview.position + previewCollider.center, previewCollider.bounds.extents * currentPreviewObject.collsionBoundsFraction, Quaternion.identity, currentPreviewObject.obstacleLayers);
             int i = 0;
 
@@ -298,17 +307,16 @@ namespace ScriptableSystems
             while (i < hitColliders.Length)
             {
                 Collider hitCollider = hitColliders[i];
-                // Debug.Log("CheckAvailability hit:" + hitCollider.gameObject.name);
+                
                 if (hitCollider.gameObject != this.gameObject && hitCollider.gameObject.layer != currentPreviewObject.layersToBuildOn)
                 {
-                    //Debug.Log("Hit obstacle : " + hitCollider.name);
-                    //  Debug.Log("CheckAvailability: uNAVAILABLE");
+                    
                     return false;
                 }
 
                 i++;
             }
-          //  Debug.Log("CheckAvailability: available");
+          
 
             return true;
 
@@ -322,24 +330,19 @@ namespace ScriptableSystems
             if (CheckAvailability() == true)
             {
                 SetPreviewColor(availableColor);
-                canBuild = true;
+                canBeBuild = true;
             }
             else
             {
-                canBuild = false;
+                canBeBuild = false;
                 SetPreviewColor(unavailableColor);
 
             }
-            if (!currentPreviewGameObject.activeInHierarchy)
-            {
-                // Debug.Log("CheckObject: !activeInHierarchy ");
-                //  currentPreviewGameObject.SetActive(true);
-            }
+           
         }
 
         public void SetPreviewColor(Color c)
         {
-            // Debug.Log("SetPreviewColor: " + c);
             previewRenderer.material.color = c;
         }
 
@@ -389,6 +392,9 @@ namespace ScriptableSystems
             }
             previewRenderer = cube.gameObject.GetComponent<MeshRenderer>();
             previewRenderer.material = previewMaterial;
+            BoxCollider box = cube.GetComponent<BoxCollider>();
+            box.isTrigger = true;
+            previewCollider = box;
         }
 
         private void RotatePreview(BuildObjectData _currentPreviewObject)
@@ -405,30 +411,18 @@ namespace ScriptableSystems
             Vector3 orientationVectorMultiplied = new Vector3(_currentPreviewObject.orientationVector.x * collisionNormal.x,
                 _currentPreviewObject.orientationVector.y * collisionNormal.y,
                  _currentPreviewObject.orientationVector.z * collisionNormal.z);
-            //  Debug.LogError("angle: " + newAngle+ ",alt: " + newAngleAlt + ", orientationVector: " + _currentPreviewObject.orientationVector);
-            //   Debug.LogError("orMult: " + orientationVectorMultiplied);
-            // if (_currentPreviewObject.objectOrientation==Enums.ObjectOrientation.WALL)
-            //  {
-            //rotation = Quaternion.AngleAxis(newAngle,orientationVectorMultiplied);
-            //rotation = Quaternion.AngleAxis(newAngle, _currentPreviewObject.orientationVector);
-            // rotation = Quaternion.FromToRotation(currentPreviewObject.orientationVector, collisionNormal);
-            // rotation = Quaternion.AngleAxis(newAngle, _currentPreviewObject.orientationVector);
-            // userRotation = Quaternion.AngleAxis(newAngleAlt, _currentPreviewObject.orientationVector);
-            currentPreview.Rotate(_currentPreviewObject.orientationVector, newAngle);
-            Debug.LogError("userRotation: " + userRotation.eulerAngles);
-
-            // currentPreview.rotation = rotation;
-
-
-
-            //StartPreview();
+       
+            userRotationF = newAngle;
+            Debug.LogError("userRotation: " + userRotationF);
+            CalculatePreview(raycastHit.point, raycastHit.normal);
+            CheckObject();
+           
         }
 
         void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawSphere(currentPosition, 0.04f);
-            // Gizmos.color = Color.red;
             Gizmos.DrawSphere(raycastHit.point, 0.02f);
 
             Gizmos.DrawLine(raycastHit.point, raycastHit.point + raycastHit.normal);

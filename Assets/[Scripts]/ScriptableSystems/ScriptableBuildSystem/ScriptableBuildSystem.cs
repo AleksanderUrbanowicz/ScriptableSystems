@@ -20,6 +20,7 @@ namespace ScriptableSystems
         public ScriptableEvent EventPreviewRaycastHit;
         public ScriptableEvent EventPreviewRaycastMiss;
         public int raycastInterval=1;
+        public int updateInterval = 2;
         public bool logs;
 
         public override void Initialize(GameObject obj)
