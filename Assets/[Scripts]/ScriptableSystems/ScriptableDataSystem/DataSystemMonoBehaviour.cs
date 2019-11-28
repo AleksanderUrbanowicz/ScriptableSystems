@@ -17,6 +17,7 @@ namespace ScriptableSystems
             scriptableDataSystem = _scriptableDataSystem;
             GameManager.instance.cash = PlayerPrefs.GetInt(scriptableDataSystem.playerPrefsCashKey, 20000);
             GameManager.instance.dataSystemMonoBehaviour = this;
+            InitSpawner();
         }
         public void GetObjectsToSave()
         {
@@ -62,10 +63,10 @@ namespace ScriptableSystems
                 file.Close();
                 foreach(ObjectData od in objectDatas)
                 {
-                    Debug.Log(od.id);
+                   spawnerHelper.SpawnObject(od);
 
                 }
-                SpawnLoadedObjects(objectDatas);
+               // SpawnLoadedObjects(objectDatas);
             }
 
         }

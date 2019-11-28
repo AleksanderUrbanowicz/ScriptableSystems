@@ -16,3 +16,8 @@ MonoBehaviour:
     type: 2}
   scriptableDataSystem: {fileID: 11400000, guid: 62f44178fd561b541822f2144fbd63a9,
     type: 2}
+  allObjectsArray:
+  - {fileID: 11400000, guid: d87353387b5754e4b817d332a3494b0b, type: 2}
+  - {fileID: 11400000, guid: b37eeacf75686d24598246c8d15b1779, type: 2}
+  - {fileID: 11400000, guid: b0158dd8011625a4c9d1b318488114c4, type: 2}
+  - {fileID: 11400000, guid: 0b2bf359676d54644ade115632e425fb, type: 2}
