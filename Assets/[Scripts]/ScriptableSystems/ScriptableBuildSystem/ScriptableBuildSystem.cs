@@ -9,19 +9,19 @@ namespace ScriptableSystems
    public class ScriptableBuildSystem : ScriptableSystem
 
     {
+
+        public LayerMask buildObjectLayer;
+        public string buildObjectLayerString;
+
         public BuildObjectListData buildObjects;
         public Color availableColor = new Color(0, 1.0f, 0, 0.2f);
         public Color unavailableColor = new Color(1.0f, 0, 0, 0.2f);
         public Material previewMaterial;
-        
-      //  public Transform cam;
-       // public Transform buildObjectsParent;
-       // private RaycastHit raycastHit;
-      //  public BuildSystemRaycast defaultRaycast;
+        public ScriptableEvent EventPreviewRaycastHit;
+        public ScriptableEvent EventPreviewRaycastMiss;
+        public int raycastInterval=1;
+        public bool logs;
 
-        //public new GameEvent OnInitialized;
-       // public new BuildSystemEvent OnInitialized;
-        
         public override void Initialize(GameObject obj)
         {
             //base.Initialize(obj);
@@ -32,11 +32,9 @@ namespace ScriptableSystems
 
                 buildSystemMonoBehaviour.Init(this);
              }
-            
-           // scriptableSystemMB.Init(this);
-            // cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+
             Debug.Log("override ScriptableBuildSystem.Initialize():" + obj.name);
-            // InitializeRaycaster();
+            
             
         }
         public override void Deinitialize()
@@ -58,20 +56,7 @@ namespace ScriptableSystems
         }
 
 
-        public void InitializeRaycaster()
-        {
-/*
-            if (defaultRaycast.initializeOnStart)
-            {
-                GameObject systemGO = new GameObject();
-                
-                defaultRaycast.Initialize(systemGO);
-                RaycastExecuteMethod raycastMethod = (defaultRaycast.ExecuteMethod as RaycastExecuteMethod);
-                raycastMethod.raycastInput.transformToFollow = cam.transform;
-                raycastMethod.raycastInput.layerMask = LayerMask.NameToLayer("Floor");
-            }
-            */
-        }
+  
     }
     
 }

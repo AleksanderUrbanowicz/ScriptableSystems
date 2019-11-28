@@ -43,4 +43,12 @@ using UnityEngine;
        EXECUTOR //Single method system, invoking same logic on different input data
 
     }
+
+    public enum LogLevel
+    {
+        NONE,
+       CRITICAL,
+       ALL
+
+    }
 }

@@ -9,9 +9,12 @@ namespace ScriptableSystems
 {
     public class BuildSystemMonoBehaviour : MonoBehaviour
     {
+        public BuildSystemRaycast buildSystemRaycast;
+
         public Color availableColor = new Color(0, 1.0f, 0, 0.2f);
         public Color unavailableColor = new Color(1.0f, 0, 0, 0.2f);
         public Material previewMaterial;
+
         public List<BuildObjectData> buildObjectsData = new List<BuildObjectData>();
         private BuildObjectData currentBuildObject;
         public int currentBuildObjectIndex = 0;
@@ -37,16 +40,49 @@ namespace ScriptableSystems
         public float previewSnapFactor = 1.0f;
         public float mainAxisLength = 15.0f;
 
-
+        private bool canBuild;
         private bool isBuilding;
+        private bool isShowingPreview;
         public Vector3 collisionCenterDebug;
         public Vector3 collisionNormal;
         public Vector3 cornerAxisVector = new Vector3(-5, 0, -5);
 
-        public void Init(ScriptableBuildSystem scriptableBuildSystem)
+        public ScriptableBuildSystem scriptableBuildSystem;
+        ScriptableEvent ScriptableEventStart;
+        ScriptableEvent ScriptableEventStop;
+
+        public ScriptableEventListener scriptableEventListenerOnHit;
+        public ScriptableEventListener scriptableEventListenerOnMiss;
+        public void Init(ScriptableBuildSystem _scriptableBuildSystem)
         {
-            Debug.Log("BuildSystemMonoBehaviour. Init(): " + scriptableBuildSystem.id);
-            availableColor = scriptableBuildSystem.availableColor;
+            scriptableBuildSystem = _scriptableBuildSystem;
+            Debug.Log("BuildSystemMonoBehaviour. Init(): " + _scriptableBuildSystem.id);
+            ScriptableEventStart = _scriptableBuildSystem.OnStartEvent;
+            ScriptableEventStop = _scriptableBuildSystem.OnStopEvent;
+
+            buildSystemRaycast = new GameObject("buildSystemRaycast").AddComponent<BuildSystemRaycast>();
+            buildSystemRaycast.gameObject.transform.parent = gameObject.transform;
+            scriptableEventListenerOnHit = new GameObject("scriptableEventListenerOnHit").AddComponent<ScriptableEventListener>();
+            scriptableEventListenerOnHit.gameObject.transform.parent = gameObject.transform;
+            scriptableEventListenerOnHit.Response = new UnityEngine.Events.UnityEvent();
+
+            scriptableEventListenerOnMiss = new GameObject("scriptableEventListenerOnMiss").AddComponent<ScriptableEventListener>();
+            scriptableEventListenerOnMiss.gameObject.transform.parent = gameObject.transform;
+            scriptableEventListenerOnMiss.Response = new UnityEngine.Events.UnityEvent();
+
+            availableColor = _scriptableBuildSystem.availableColor;
+            unavailableColor = _scriptableBuildSystem.unavailableColor;
+            previewMaterial = _scriptableBuildSystem.previewMaterial;
+            buildObjectsData = _scriptableBuildSystem.buildObjects.items;
+            buildSystemRaycast.Init(_scriptableBuildSystem);
+            scriptableEventListenerOnHit.Event = _scriptableBuildSystem.EventPreviewRaycastHit;
+            scriptableEventListenerOnHit.Response.AddListener(() => HandlePreviewHit());
+            scriptableEventListenerOnHit.Validate();
+
+            scriptableEventListenerOnMiss.Event = _scriptableBuildSystem.EventPreviewRaycastMiss;
+            scriptableEventListenerOnMiss.Response.AddListener(() => HandlePreviewMiss());
+            scriptableEventListenerOnMiss.Validate();
+
         }
 
         private void Start()
@@ -54,7 +90,7 @@ namespace ScriptableSystems
             if (buildObjectsParent == null)
             {
                 buildObjectsParent = new GameObject("BuildObjects").transform;
-
+               // buildObjectsParent.parent = gameObject.transform;
             }
             if (isBuilding)
             {
@@ -74,7 +110,7 @@ namespace ScriptableSystems
                 {
                     currentBuildObjectIndex++;
                     CancelPreview();
-                    ///CustomStart();
+                    CustomStart();
                 }
                 if (Input.GetKeyDown(KeyCode.R))
                 {
@@ -86,7 +122,20 @@ namespace ScriptableSystems
                     CancelPreview();
                 }
                 // StartRaycastPreview();
-                CustomStart();
+               // CustomStart();
+               if(isShowingPreview)
+                {
+                    ShowPreview();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+
+                        BuildPreviewObject();
+                        CustomStart();
+                    }
+
+
+                }
+
             }
             else
             {
@@ -94,13 +143,13 @@ namespace ScriptableSystems
                 if (Input.GetKeyDown(KeyCode.B))
                 {
                     isBuilding = !isBuilding;
-
+                   
 
                     CustomStart();
-
+                   // StartRaycastPreview();
 
                 }
-                CancelPreview();
+                //CancelPreview();
 
             }
 
@@ -134,29 +183,63 @@ namespace ScriptableSystems
             AddPreviewMesh(currentPreviewGameObject, currentPreviewObject);
         }
 
+
+        public void BuildPreviewObject()
+        {
+           
+            rotation = Quaternion.identity;
+            GameObject go = Instantiate(currentBuildObject.objectPrefab, currentPosition, rotation);
+            go.name = currentBuildObject.id;
+            go.layer = LayerMask.NameToLayer(scriptableBuildSystem.buildObjectLayerString);
+           // go.transform.parent = buildObjectsParent;
+            AddPreviewCollider(go, currentPreviewObject);
+        }
+        
+
         public void StartRaycastPreview()
         {
+            //buildSystemRaycast.layersToBuildOn = currentPreviewObject.layersToBuildOn;
+            buildSystemRaycast.StartExecute(currentPreviewObject.layersToBuildOn);
             // CustomStart();
-            if (Physics.Raycast(cam.position, cam.forward, out raycastHit, raycastMaxDistance, currentPreviewObject.layersToBuildOn))
-            {
-                if (raycastHit.transform != this.transform)
-                { ShowPreview(raycastHit.point, raycastHit.normal); }
-            }
+            // if (Physics.Raycast(cam.position, cam.forward, out raycastHit, raycastMaxDistance, currentPreviewObject.layersToBuildOn))
+            //  {
+            //     if (raycastHit.transform != this.transform)
+            //    { ShowPreview(raycastHit.point, raycastHit.normal); }
+            //  }
 
         }
         public void CancelPreview()
         {
+           if(scriptableBuildSystem.logs) Debug.LogError("CancelPreview");
             if (currentPreviewGameObject != null)
             {
                 Destroy(currentPreviewGameObject);
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
+            buildSystemRaycast.StopExecute();
 
         }
 
-        public void ShowPreview(Vector3 point, Vector3 normal)
+        public void HandlePreviewHit()
         {
+            isShowingPreview = true;
+
+        }
+        public void HandlePreviewMiss()
+        {
+            isShowingPreview = false;
+
+        }
+
+        public void ShowPreview()
+        {
+
+            if (scriptableBuildSystem.logs) Debug.LogError("ShowPreview");
+          Vector3  point = buildSystemRaycast.raycastHit.point;
+            Vector3 normal = buildSystemRaycast.raycastHit.normal;
+
+            
             if (currentPreviewObject == null)
             {
                 return;
@@ -239,11 +322,11 @@ namespace ScriptableSystems
             if (CheckAvailability() == true)
             {
                 SetPreviewColor(availableColor);
-
+                canBuild = true;
             }
             else
             {
-
+                canBuild = false;
                 SetPreviewColor(unavailableColor);
 
             }

@@ -25,8 +25,8 @@ MonoBehaviour:
   rotationStep: 90
   layersToBuildOn:
     serializedVersion: 2
-    m_Bits: 4198400
+    m_Bits: 2048
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 8388608
+    m_Bits: 2097152
   collsionBoundsFraction: 0.95

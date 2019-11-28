@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: StandardBuildObjectsList
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 11400000, guid: 0a92a0d91673f794382201a83eef783b, type: 2}
   - {fileID: 11400000, guid: d87353387b5754e4b817d332a3494b0b, type: 2}
   - {fileID: 11400000, guid: b37eeacf75686d24598246c8d15b1779, type: 2}
   - {fileID: 11400000, guid: b0158dd8011625a4c9d1b318488114c4, type: 2}

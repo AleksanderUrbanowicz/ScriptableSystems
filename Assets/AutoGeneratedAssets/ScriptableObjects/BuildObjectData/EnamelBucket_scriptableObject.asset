@@ -18,15 +18,15 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   actualSize: {x: 0.32921898, y: 0.262969, z: 0.335313}
   gridSize: {x: 1, y: 1, z: 1}
-  orientationVector: {x: 0, y: 0, z: -1}
+  orientationVector: {x: 0, y: 1, z: 0}
   isBuyable: 0
   cost: 0
   objectOrientation: 1
   rotationStep: 90
   layersToBuildOn:
     serializedVersion: 2
-    m_Bits: 4194304
+    m_Bits: 26624
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 2097152
   collsionBoundsFraction: 0.95

@@ -10,5 +10,7 @@ namespace ScriptableSystems
     public class BuildObjectListData : ScriptableObject
     {
         public List<BuildObjectData> items;
+
+        
     }
 }

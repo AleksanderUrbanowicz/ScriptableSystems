@@ -19,7 +19,16 @@ MonoBehaviour:
   OnInitializedEvent: {fileID: 11400000, guid: 5bc5c848c7ac1af4fb51e4e7ee9e34ef, type: 2}
   OnStartEvent: {fileID: 11400000, guid: f5b4aec027fe1184a9672cd1c6b27ffc, type: 2}
   OnStopEvent: {fileID: 11400000, guid: 34b5aec6288c94b4299f92ec5a7bd440, type: 2}
+  buildObjectLayer:
+    serializedVersion: 2
+    m_Bits: 2097152
   buildObjects: {fileID: 11400000, guid: 398aba327bae6134990033c654fe9dec, type: 2}
-  availableColor: {r: 0.24022865, g: 0, b: 1, a: 0.2}
-  unavailableColor: {r: 1, g: 0, b: 0, a: 0.2}
+  availableColor: {r: 0, g: 1, b: 0, a: 0.08627451}
+  unavailableColor: {r: 1, g: 0, b: 0, a: 0.08627451}
   previewMaterial: {fileID: 2100000, guid: de2ee47f37ec0f54fbbe1eaaf59a3818, type: 2}
+  EventPreviewRaycastHit: {fileID: 11400000, guid: a17ade94e5ed4f4499e250b4d472b741,
+    type: 2}
+  EventPreviewRaycastMiss: {fileID: 11400000, guid: 5cf040e246681374699b98ee25d0109f,
+    type: 2}
+  raycastInterval: 3
+  logs: 0

@@ -16,17 +16,17 @@ TagManager:
   - 
   - 
   - 
+  - Floor
+  - Ground
+  - Wall
+  - Ceiling
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Object
   - 
   - 
   - 
