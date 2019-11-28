@@ -1326,7 +1326,6 @@ GameObject:
   - component: {fileID: 1812953080531248802}
   - component: {fileID: 1785422291806656302}
   - component: {fileID: 1777804819564646384}
-  - component: {fileID: 5250943291749423119}
   m_Layer: 12
   m_Name: NewCameraController
   m_TagString: Player
@@ -1404,43 +1403,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2432110287119c0448aba8fb381c07b2, type: 3}
   LandSounds:
   - {fileID: 8300000, guid: c8ef50e67443ec2428cb3966d32455ba, type: 3}
---- !u!114 &5250943291749423119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818633977501985266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb91d11e408d1e64780bfe153b36b3df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  availableColor: {r: 0, g: 1, b: 0, a: 0.043137256}
-  unavailableColor: {r: 1, g: 0, b: 0, a: 0.043137256}
-  previewMaterial: {fileID: 2100000, guid: de2ee47f37ec0f54fbbe1eaaf59a3818, type: 2}
-  buildObjectsData:
-  - {fileID: 11400000, guid: b0158dd8011625a4c9d1b318488114c4, type: 2}
-  - {fileID: 11400000, guid: b37eeacf75686d24598246c8d15b1779, type: 2}
-  - {fileID: 11400000, guid: 0b2bf359676d54644ade115632e425fb, type: 2}
-  - {fileID: 11400000, guid: 26ceaceab94f0b6499f16e88c8a702b1, type: 2}
-  - {fileID: 11400000, guid: 0a92a0d91673f794382201a83eef783b, type: 2}
-  - {fileID: 11400000, guid: d87353387b5754e4b817d332a3494b0b, type: 2}
-  currentBuildObjectIndex: 1
-  rotation: {x: 0, y: 0, z: 0, w: 0}
-  userRotation: {x: 0, y: 0, z: 0, w: 0}
-  userRotationF: {x: 0, y: 0, z: 0, w: 0}
-  currentPreview: {fileID: 0}
-  cam: {fileID: 1813256259288960878}
-  buildObjectsParent: {fileID: 0}
-  raycastMaxDistance: 14
-  offset: 0
-  gridSize: 0.5
-  previewSnapFactor: 1
-  mainAxisLength: 15
-  collisionCenterDebug: {x: 0, y: 0, z: 0}
-  collisionNormal: {x: 0, y: 0, z: 0}
-  cornerAxisVector: {x: -5, y: 0, z: -5}
 --- !u!1 &1818638183904159520
 GameObject:
   m_ObjectHideFlags: 0

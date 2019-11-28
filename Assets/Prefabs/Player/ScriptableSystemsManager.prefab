@@ -45,5 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptableSystems:
   - {fileID: 11400000, guid: 72ab30db35ca5fa4eb37d2fde5ffc456, type: 2}
-  - {fileID: 11400000, guid: cb01cd5d4df5a8b4381c17f6a4a82fec, type: 2}
-  scriptableTools: []
+  - {fileID: 11400000, guid: 62f44178fd561b541822f2144fbd63a9, type: 2}

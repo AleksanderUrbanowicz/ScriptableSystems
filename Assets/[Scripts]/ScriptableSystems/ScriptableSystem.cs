@@ -14,9 +14,9 @@ namespace ScriptableSystems
 
         public MonoScript monoBehaviourScript;
 
-        public ScriptableEvent OnInitializedEvent;
-        public ScriptableEvent OnStartEvent;
-        public ScriptableEvent OnStopEvent;
+        private ScriptableEvent OnInitializedEvent;
+        private ScriptableEvent OnStartEvent;
+        private ScriptableEvent OnStopEvent;
         public virtual void Initialize(GameObject obj)
         { 
              obj.name = id;
@@ -36,7 +36,7 @@ namespace ScriptableSystems
 
             OnInitializedEvent.Raise();
         }
-
+        /*
         public virtual void Deinitialize()
         {
             //   Debug.Log("ScriptableExecutor.Deinitialize");
@@ -54,6 +54,6 @@ namespace ScriptableSystems
 
 
         }
-
+        */
     }
 }

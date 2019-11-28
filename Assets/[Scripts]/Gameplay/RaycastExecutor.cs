@@ -4,71 +4,63 @@ using UnityEngine;
 
 namespace ScriptableSystems
 {
-    public class BuildSystemRaycast : MonoBehaviour
+    public class RaycastExecutor : MonoBehaviour
     {
 
-        public Transform cam;
+        public Transform target;
+        public float raycastMaxDistance = 10.0f;
+        public LayerMask layers;
 
         public RaycastHit raycastHit;
+        public bool output;
+
         public bool isRaycasting;
         public int raycastInterval;
-        public int counter=0;
-        public float raycastMaxDistance = 10.0f;
-  
+        public int counter = 0;
 
-        public Vector3 collisionNormal;
-        public LayerMask layersToBuildOn;
-        public bool output;
         public ScriptableEvent ScriptableEventHit;
         public ScriptableEvent ScriptableEventMiss;
 
+        public void Init( )
+        {
+            target = GameObject.FindGameObjectWithTag("MainCamera").transform;
+
+        }
 
         public void Init(ScriptableBuildSystem scriptableBuildSystem)
         {
-            cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
-            layersToBuildOn= scriptableBuildSystem.buildObjects.items[0].layersToBuildOn;
+            layers = scriptableBuildSystem.buildObjects.items[0].layersToBuildOn;
             ScriptableEventHit = scriptableBuildSystem.EventPreviewRaycastHit;
             ScriptableEventMiss = scriptableBuildSystem.EventPreviewRaycastMiss;
             raycastInterval = scriptableBuildSystem.raycastInterval;
             raycastMaxDistance = scriptableBuildSystem.raycastMaxDistance;
-         
+
         }
         public void Update()
         {
             if (isRaycasting)
             {
                 counter++;
-                if(counter>=raycastInterval)
+                if (counter >= raycastInterval)
                 {
-                    
-                    if (output != Physics.Raycast(cam.position, cam.forward, out raycastHit, raycastMaxDistance, layersToBuildOn))
+
+                    if (output != Physics.Raycast(target.position, target.forward, out raycastHit, raycastMaxDistance, layers))
                     {
                         output = !output;
-                        if(output)
+                        if (output)
                         {
                             ScriptableEventHit.Raise();
                         }
                         else { ScriptableEventMiss.Raise(); }
-                        
+
 
                     }
-                    
-  
+
+
                     counter = 0;
                 }
-              
+
             }
         }
-
-        public void StartExecute(LayerMask _layersToBuildOn)
-        {
-            layersToBuildOn = _layersToBuildOn;
-            isRaycasting = true;
-        }
-        public void StopExecute()
-        {
-            isRaycasting = false;
-        }
-   
     }
 }

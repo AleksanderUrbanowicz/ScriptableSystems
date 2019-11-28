@@ -33,7 +33,7 @@ namespace ScriptableSystems
         public Transform buildObjectsParent;
         private RaycastHit raycastHit;
 
-
+        public int cash;
    
         public float offset = 1.0f;
         public float gridSize = 1.0f;
@@ -63,7 +63,10 @@ namespace ScriptableSystems
             unavailableColor = _scriptableBuildSystem.unavailableColor;
             previewMaterial = _scriptableBuildSystem.previewMaterial;
             buildObjectsData = _scriptableBuildSystem.buildObjects.items;
-      
+            previewSnapFactor = scriptableBuildSystem.previewSnapFactor;
+            offset = scriptableBuildSystem.offset;
+            gridSize = scriptableBuildSystem.gridSize;
+
         }
 
         public void InitEventListeners(ScriptableBuildSystem _scriptableBuildSystem)
@@ -98,15 +101,13 @@ namespace ScriptableSystems
             {
                 buildObjectsParent = new GameObject("BuildObjects").transform;
             }
-         
+            GameManager.instance.buildSystemMonoBehaviour = this;
 
         }
 
         void Update()
         {
-            counter++;
-            if (counter >= scriptableBuildSystem.updateInterval)
-            {
+         
 
                 if (isBuilding)
                 {
@@ -154,8 +155,8 @@ namespace ScriptableSystems
 
 
                 }
-                counter = 0;
-            }
+                
+            
 
         }
 
@@ -188,11 +189,13 @@ namespace ScriptableSystems
 
         public void BuildPreviewObject()
         {
-           
+
             //rotation = Quaternion.identity;
+            GameManager.instance.cash -= currentBuildObject.cost;
             GameObject go = Instantiate(currentBuildObject.objectPrefab, currentPosition, rotation);
             go.name = currentBuildObject.id;
             go.layer = LayerMask.NameToLayer(scriptableBuildSystem.buildObjectLayerString);
+            go.tag = scriptableBuildSystem.buildObjectLayerString;
             go.transform.parent = buildObjectsParent;
             AddPreviewCollider(go, currentPreviewObject);
         }
@@ -294,13 +297,16 @@ namespace ScriptableSystems
             if (scriptableBuildSystem.logs) Debug.Log("CheckAvailability");
             collisionCenterDebug = currentPreview.position + previewCollider.center;
             Vector3 halfEx = previewCollider.bounds.extents * currentPreviewObject.collsionBoundsFraction;
-            halfEx.x *= previewCollider.transform.localScale.x;
-            halfEx.y *= previewCollider.transform.localScale.y;
-            halfEx.z *= previewCollider.transform.localScale.z;
+           // halfEx.x *= previewCollider.transform.localScale.x;
+           // halfEx.y *= previewCollider.transform.localScale.y;
+          //  halfEx.z *= previewCollider.transform.localScale.z;
 
             Debug.Log("halfEx:"+ halfEx); 
                  Debug.Log("previewCollider.bounds.extents:" + previewCollider.bounds.extents);
-            Collider[] hitColliders = Physics.OverlapBox(currentPreview.position + previewCollider.center, previewCollider.bounds.extents * currentPreviewObject.collsionBoundsFraction, Quaternion.identity, currentPreviewObject.obstacleLayers);
+
+             Collider[] hitColliders = Physics.OverlapBox(currentPreview.position + previewCollider.center, halfEx, previewCollider.transform.rotation, currentPreviewObject.obstacleLayers);
+
+            // Collider[] hitColliders = Physics.OverlapBox(currentPreview.position + previewCollider.center, previewCollider.bounds.extents * currentPreviewObject.collsionBoundsFraction, Quaternion.identity, currentPreviewObject.obstacleLayers);
             int i = 0;
 
 
@@ -324,10 +330,10 @@ namespace ScriptableSystems
 
         public void CheckObject()
         {
-           // Debug.Log("CheckObject  ");
+           
 
 
-            if (CheckAvailability() == true)
+            if (CheckAvailability() == true && GameManager.instance.cash >= currentBuildObject.cost)
             {
                 SetPreviewColor(availableColor);
                 canBeBuild = true;
@@ -413,7 +419,7 @@ namespace ScriptableSystems
                  _currentPreviewObject.orientationVector.z * collisionNormal.z);
        
             userRotationF = newAngle;
-            Debug.LogError("userRotation: " + userRotationF);
+            Debug.Log("userRotation: " + userRotationF);
             CalculatePreview(raycastHit.point, raycastHit.normal);
             CheckObject();
            
@@ -450,6 +456,18 @@ namespace ScriptableSystems
             }
             Gizmos.DrawLine(cornerAxisVector, cornerAxisVector + Vector3.forward * mainAxisLength);
 
+            if (currentPreview != null && previewCollider!=null)
+            {
+                Vector3 halfEx = previewCollider.bounds.extents ;
+                halfEx.x *= previewCollider.transform.localScale.x;
+                halfEx.y *= previewCollider.transform.localScale.y;
+                halfEx.z *= previewCollider.transform.localScale.z;
+                Gizmos.matrix = Matrix4x4.TRS(previewCollider.transform.position + previewCollider.center, previewCollider.transform.rotation, previewCollider.transform.localScale);
+                Gizmos.color = Color.magenta;
+                
+                Gizmos.DrawCube(Vector3.zero, Vector3.one);
+            }
+                
         }
     }
 }

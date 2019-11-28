@@ -20,7 +20,8 @@ namespace ScriptableSystems
             if(eventListeners.Count==0)
             {
 
-                Debug.Log("Raise(): eventListeners.Count==0");
+                Debug.Log("Raise(): eventListeners.Count==0, returning");
+                return;
             }
                 for (int i = eventListeners.Count - 1; i >= 0; i--)
                     eventListeners[i].OnEventRaised();

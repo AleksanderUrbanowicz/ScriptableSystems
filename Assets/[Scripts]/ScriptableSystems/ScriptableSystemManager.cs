@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ScriptableSystems
 {
@@ -8,7 +9,9 @@ namespace ScriptableSystems
     //  MonoBehaviour script for managing scriptable systems of different levels
     public class ScriptableSystemManager : MonoBehaviour
     {
-        
+
+        public Text infoText;
+        public static int cash;
         public List<ScriptableSystem> scriptableSystems=new List<ScriptableSystem>();
        // public List<ScriptableExecutor> scriptableTools = new List<ScriptableExecutor>();
         void Start()
@@ -23,12 +26,17 @@ namespace ScriptableSystems
                     scriptableSystem.Initialize(systemGO);
                 }
             }
+            
         }
 
         // Update is called once per frame
         void Update()
         {
+if(infoText!=null)
+            {
 
+                infoText.text = GameManager.instance.cash.ToString();
+            }
         }
     }
 }
