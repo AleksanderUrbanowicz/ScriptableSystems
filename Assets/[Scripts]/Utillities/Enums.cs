@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
- namespace ScriptableSystems
+namespace ScriptableSystems
 {
-   public enum ObjectOrientation
+    public enum ObjectOrientation
     {
         NONE,
         FLOOR,
@@ -39,16 +39,33 @@ using UnityEngine;
 
     public enum ScriptableSystemType
     {
-       SYSTEM,  //Complex system initialized with data from ScriptableObject asset
-       EXECUTOR //Single method system, invoking same logic on different input data
+        SYSTEM,  //Complex system initialized with data from ScriptableObject asset
+        EXECUTOR //Single method system, invoking same logic on different input data
 
     }
 
     public enum LogLevel
     {
         NONE,
-       CRITICAL,
-       ALL
+        CRITICAL,
+        ALL
+
+    }
+
+    public enum ButtonType
+    {
+        DEFAULT,
+        CONFIRM,
+        WARNING,
+        ALERT
+
+    }
+
+    public enum PanelType
+    {
+        DEFAULT,
+        LIST,
+        POPUP
 
     }
 }
