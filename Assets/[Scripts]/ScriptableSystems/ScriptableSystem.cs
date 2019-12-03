@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+//#if UNITY_EDITOR
 namespace ScriptableSystems
 {
     public abstract class ScriptableSystem : ScriptableObject
@@ -12,8 +12,8 @@ namespace ScriptableSystems
 
         public bool initializeOnStart;
 
-        public MonoScript monoBehaviourScript;
-
+        //public MonoScript monoBehaviourScript;
+        public MonoBehaviour monoBehaviourScript;
         private ScriptableEvent OnInitializedEvent;
         private ScriptableEvent OnStartEvent;
         private ScriptableEvent OnStopEvent;
@@ -57,3 +57,4 @@ namespace ScriptableSystems
         */
     }
 }
+//#endif

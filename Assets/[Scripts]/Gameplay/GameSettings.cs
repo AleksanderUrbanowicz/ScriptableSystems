@@ -3,6 +3,10 @@ using System.Collections;
 using System;
 using ScriptableSystems;
 using System.Collections.Generic;
+#if UNITY_EDITOR
+using UnityEditor;
+
+#endif
 
 [CreateAssetMenu(fileName = "GameSettings", menuName = "Settings/GameSettings")]
 
@@ -16,7 +20,9 @@ public class GameSettings : ScriptableObject
 
     private void OnEnable()
     {
+#if UNITY_EDITOR
         allObjectsArray = EditorTools.GetAllInstances<BuildObjectData>();
+#endif
     }
 
     public BuildObjectData GetBuildObjectData(string _id)

@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: BuildSystemStandardId
   initializeOnStart: 1
-  monoBehaviourScript: {fileID: 11500000, guid: fb91d11e408d1e64780bfe153b36b3df,
-    type: 3}
+  monoBehaviourScript: {fileID: 0}
   buildObjectLayerString: Object
   buildObjects: {fileID: 11400000, guid: 398aba327bae6134990033c654fe9dec, type: 2}
   availableColor: {r: 0, g: 1, b: 0, a: 0.08627451}
   unavailableColor: {r: 1, g: 0, b: 0, a: 0.08627451}
   previewMaterial: {fileID: 2100000, guid: de2ee47f37ec0f54fbbe1eaaf59a3818, type: 2}
-  raycastMaxDistance: 4
+  raycastMaxDistance: 8
   offset: 0
   gridSize: 0.25
   previewSnapFactor: 1

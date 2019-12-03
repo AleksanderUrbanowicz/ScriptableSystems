@@ -13,11 +13,12 @@ namespace ScriptableSystems
 
         public string objectsTag = "Object";
         public string playerPrefsCashKey="Cash";
+        
         public override void Initialize(GameObject obj)
         {
             //base.Initialize(obj);
             obj.name = id;
-            DataSystemMonoBehaviour dataSystemMonoBehaviour = obj.AddComponent(monoBehaviourScript.GetClass()) as DataSystemMonoBehaviour;
+            DataSystemMonoBehaviour dataSystemMonoBehaviour = obj.AddComponent<DataSystemMonoBehaviour>();
             if (dataSystemMonoBehaviour != null)
             {
 

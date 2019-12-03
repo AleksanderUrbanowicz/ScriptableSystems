@@ -18,6 +18,7 @@ namespace ScriptableSystems
             GameManager.instance.cash = PlayerPrefs.GetInt(scriptableDataSystem.playerPrefsCashKey, 20000);
             GameManager.instance.dataSystemMonoBehaviour = this;
             InitSpawner();
+            LoadObjects();
         }
         public void GetObjectsToSave()
         {

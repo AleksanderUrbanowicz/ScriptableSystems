@@ -5,9 +5,10 @@ using System.Collections.Generic;
 
 public class EditorTools
 {
-
+#if UNITY_EDITOR
     static List<string> layers;
     static string[] layerNames;
+
 
     public static LayerMask LayerMaskField(string label, LayerMask selected)
     {
@@ -64,6 +65,6 @@ public class EditorTools
         return a;
 
     }
-
+#endif
 }
 

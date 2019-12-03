@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: StandardBuildObjectsList
   m_EditorClassIdentifier: 
   items:
-  - {fileID: 11400000, guid: d87353387b5754e4b817d332a3494b0b, type: 2}
   - {fileID: 11400000, guid: b37eeacf75686d24598246c8d15b1779, type: 2}
   - {fileID: 11400000, guid: b0158dd8011625a4c9d1b318488114c4, type: 2}
-  - {fileID: 11400000, guid: 0b2bf359676d54644ade115632e425fb, type: 2}
+  - {fileID: 11400000, guid: 35f4d1764ccafb34e98c5d4c7ae1cde8, type: 2}
+  - {fileID: 11400000, guid: afee4fd11d1391c48b0ef4064aefefdd, type: 2}
+  - {fileID: 11400000, guid: 3c5171089ea1ece418cb2e4f4c346659, type: 2}

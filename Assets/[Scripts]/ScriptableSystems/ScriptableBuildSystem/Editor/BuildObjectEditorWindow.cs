@@ -323,35 +323,8 @@ public class BuildObjectEditorWindow : EditorWindow
     {
         sceneObject = null;
         displayObject = false;
-
+        buildObjectData.Destroy();
+        InitData();
     }
-    /*
-    private void AddCollider(GameObject _sceneGO)
-    {
-       // _sceneGO.AddComponent<BoxCollider>();
-       BoxCollider boxCollider= _sceneGO.AddComponent<BoxCollider>();
-        boxCollider.center = new Vector3(0, buildObjectData.gridSize.y / 2.0f, 0);
-        boxCollider.size = buildObjectData.gridSize;
-        buildObjectData.previewCollider = boxCollider;
-        //buildObjectData.previewCollider.center = new Vector3(0, buildObjectData.gridSize.y / 2.0f,0);
-        //  buildObjectData.previewCollider.size = buildObjectData.gridSize;
-    }
-
-    private void AddPreviewMesh(GameObject _sceneGO)
-    {
-        
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-       
-        
-        cube.transform.SetParent(_sceneGO.transform);
-         
-        cube.transform.localScale = new Vector3(buildObjectData.gridSize.x, buildObjectData.gridSize.y , buildObjectData.gridSize.z);
-        cube.transform.localPosition = new Vector3(0, buildObjectData.gridSize.y / 2.0f, 0);
-
-        buildObjectData.previewRendererGO = cube;
-        // cube.transform.localPosition = new Vector3(0, buildObjectData.gridSize.y / 2.0f, 0);
-        // cube.transform.localScale = buildObjectData.gridSize;
-
-    }
-    */
+   
 }

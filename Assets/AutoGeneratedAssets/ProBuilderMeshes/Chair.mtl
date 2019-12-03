@@ -1,0 +1,11 @@
+newmtl Material
+map_Kd Wood_019_basecolor.jpg
+Kd 0.8 0.8 0.8
+d 1
+
+newmtl Material.001
+map_Kd Sci-Fi_Padded_Fabric_001_basecolor.jpg
+bump Sci-Fi_Padded_Fabric_001_normal.jpg
+Kd 0.8 0.8 0.8
+d 1
+

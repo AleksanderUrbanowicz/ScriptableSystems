@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         if (infoText != null)
         {
 
-            infoText.text =cash.ToString();
+            infoText.text ="Cash: "+cash.ToString();
         }
     }
 
@@ -68,5 +68,12 @@ public class GameManager : MonoBehaviour
 
         }
 
+    }
+    
+    public void Quit()
+    {
+        dataSystemMonoBehaviour.SaveObjects();
+        dataSystemMonoBehaviour.SavePlayerData();
+        Application.Quit();
     }
 }

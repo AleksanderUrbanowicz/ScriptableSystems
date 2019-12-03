@@ -34,7 +34,7 @@ namespace ScriptableSystems
         {
             //base.Initialize(obj);
             obj.name = id;
-            BuildSystemMonoBehaviour buildSystemMonoBehaviour = obj.AddComponent(monoBehaviourScript.GetClass()) as BuildSystemMonoBehaviour;
+            BuildSystemMonoBehaviour buildSystemMonoBehaviour = obj.AddComponent< BuildSystemMonoBehaviour>();
               if (buildSystemMonoBehaviour != null)
              {
 

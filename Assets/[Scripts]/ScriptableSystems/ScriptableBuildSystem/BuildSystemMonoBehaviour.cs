@@ -465,7 +465,7 @@ namespace ScriptableSystems
                 Gizmos.matrix = Matrix4x4.TRS(previewCollider.transform.position + previewCollider.center, previewCollider.transform.rotation, previewCollider.transform.localScale);
                 Gizmos.color = Color.magenta;
                 
-                Gizmos.DrawCube(Vector3.zero, Vector3.one);
+               // Gizmos.DrawCube(Vector3.zero, Vector3.one);
             }
                 
         }
