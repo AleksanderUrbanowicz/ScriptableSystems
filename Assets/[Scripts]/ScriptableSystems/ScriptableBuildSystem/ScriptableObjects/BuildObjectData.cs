@@ -17,7 +17,7 @@ namespace ScriptableSystems
         public Vector3 actualSize;
         public Vector3 gridSize;
         public Vector3 orientationVector;
-        public bool isBuyable;
+        
         public int cost;
         public ObjectOrientation objectOrientation;
         public float rotationStep;

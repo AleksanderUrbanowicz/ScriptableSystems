@@ -8,7 +8,7 @@ namespace ScriptableSystems
 
     public class ScriptableEvent : ScriptableObject
     {
-
+        public string id;
             /// <summary>
             /// The list of listeners that this event will notify if it is raised.
             /// </summary>

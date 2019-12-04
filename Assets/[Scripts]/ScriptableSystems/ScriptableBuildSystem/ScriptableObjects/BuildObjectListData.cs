@@ -9,6 +9,7 @@ namespace ScriptableSystems
 
     public class BuildObjectListData : ScriptableObject
     {
+        public string id;
         public List<BuildObjectData> items;
 
         

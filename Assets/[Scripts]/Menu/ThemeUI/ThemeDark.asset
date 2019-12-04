@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a56f87bb1b07424fb369c7f2c9fa600, type: 3}
   m_Name: ThemeDark
   m_EditorClassIdentifier: 
+  id: ThemeDark
   defaultColor: {r: 0, g: 0, b: 0, a: 0.43529412}
   defaultBackgroundColor: {r: 0.13336597, g: 0.19416614, b: 0.764151, a: 0}
   defaultFontColor: {r: 1, g: 1, b: 1, a: 0.7411765}

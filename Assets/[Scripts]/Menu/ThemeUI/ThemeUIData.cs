@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ThemeUIData : ScriptableObject
 {
+    public string id;
     public Color defaultColor;
     public Color defaultBackgroundColor;
     public Color defaultFontColor;

@@ -10,6 +10,8 @@ namespace ScriptableSystems
 
     public class BuildObjectCategoryData : ScriptableObject
     {
+
+        public string id;
         public BuildObjectListData buildObjectListData;
     }
 }

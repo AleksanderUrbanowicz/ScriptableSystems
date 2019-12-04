@@ -43,27 +43,9 @@ namespace ScriptableSystems
 
             Debug.Log("override ScriptableBuildSystem.Initialize():" + obj.name);
             
-            
-        }
-        /*
-        public override void Deinitialize()
-        {
            
-            Debug.Log("override ScriptableBuildSystem.DeInitialize()"); 
         }
-        
-        public override void Start()
-        {
-            
-            Debug.Log("override ScriptableBuildSystem.Start()" );
-
-        }
-        public override void Stop()
-        {
-            Debug.Log("override ScriptableBuildSystem.Stop()");
-
-        }
-        */
+       
 
   
     }

@@ -15,6 +15,8 @@ namespace ScriptableSystems
 
     public  class GameEvent : ScriptableObject
     {
+        public string id;
+
         /// <summary>
         /// The list of listeners that this event will notify if it is raised.
         /// </summary>

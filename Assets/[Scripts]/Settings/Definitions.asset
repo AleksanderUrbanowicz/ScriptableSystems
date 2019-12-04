@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5baa52b3e9d9c429bfe9e4891171cb, type: 3}
+  m_Name: Definitions
+  m_EditorClassIdentifier: 
+  buildObjects:
+  - {fileID: 11400000, guid: 3c5171089ea1ece418cb2e4f4c346659, type: 2}
+  - {fileID: 11400000, guid: d87353387b5754e4b817d332a3494b0b, type: 2}
+  - {fileID: 11400000, guid: ce239b8d9b5964d41948b4f6e03f34a1, type: 2}
+  - {fileID: 11400000, guid: afee4fd11d1391c48b0ef4064aefefdd, type: 2}
+  - {fileID: 11400000, guid: b37eeacf75686d24598246c8d15b1779, type: 2}
+  - {fileID: 11400000, guid: b0158dd8011625a4c9d1b318488114c4, type: 2}
+  - {fileID: 11400000, guid: 35f4d1764ccafb34e98c5d4c7ae1cde8, type: 2}
+  - {fileID: 11400000, guid: 0b2bf359676d54644ade115632e425fb, type: 2}
+  buildObjectCategories:
+  - {fileID: 11400000, guid: 05c72f34280fef540a29f581aca01f83, type: 2}
+  buildObjectLists:
+  - {fileID: 11400000, guid: dabf01c9e82810241a607edc642c241e, type: 2}
+  - {fileID: 11400000, guid: 398aba327bae6134990033c654fe9dec, type: 2}
+  gameEvents:
+  - {fileID: 11400000, guid: 0b93cd20398f74c47b9c0428ba34abff, type: 2}
+  scriptableEvents:
+  - {fileID: 11400000, guid: a17ade94e5ed4f4499e250b4d472b741, type: 2}
+  - {fileID: 11400000, guid: 5bc5c848c7ac1af4fb51e4e7ee9e34ef, type: 2}
+  - {fileID: 11400000, guid: 5cf040e246681374699b98ee25d0109f, type: 2}
+  - {fileID: 11400000, guid: f5b4aec027fe1184a9672cd1c6b27ffc, type: 2}
+  - {fileID: 11400000, guid: 34b5aec6288c94b4299f92ec5a7bd440, type: 2}
+  - {fileID: 11400000, guid: adaec2cdc3b9b394897603d6414ac3a0, type: 2}
+  - {fileID: 11400000, guid: aee18fb7f37e684459a1a9ec0cfa28d6, type: 2}
+  uiThemes:
+  - {fileID: 11400000, guid: 23d0a29938b009f409c623e513b64dd7, type: 2}
+  employeeTypes:
+  - id: Maid
+  - id: ServiceWorker
+  - id: Waiter
+  levels:
+  - {fileID: 11400000, guid: 9a466d28d4ca34e4fa5cf1bb1f96d451, type: 2}
