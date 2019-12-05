@@ -8,15 +8,20 @@ namespace EditorTools
     //[CreateAssetMenu(fileName = "Definitions", menuName = "Settings/Definitions")]
     public class Definitions : ScriptableObject
     {
+
+        public CharacterType[] characterTypes;
+        public EmployeeType[] employeeTypes;
+        public GuestType[] guestTypes;
+        public MaterialType[] materialTypes;
+        public ObjectType[] objectTypes;
+
         public BuildObjectData[] buildObjects;
         public BuildObjectCategoryData[] buildObjectCategories;
         public BuildObjectListData[] buildObjectLists;
         public GameEvent[] gameEvents;
         public ScriptableEvent[] scriptableEvents;
         public ThemeUIData[] uiThemes;
-        public CharacterType[] characterTypes;
-        public EmployeeType[] employeeTypes;
-        public GuestType[] guestTypes;
+        public BuildObjectMaterialSet[] materialSets;
 
         public LevelData[] levels;
         public BuildObjectDynamicParameterType[] buildObjectDynamicParameterTypes;
@@ -38,6 +43,7 @@ namespace EditorTools
             scriptableEvents = EditorStaticTools.GetAllInstances<ScriptableEvent>();
 
             uiThemes = EditorStaticTools.GetAllInstances<ThemeUIData>();
+            materialSets = EditorStaticTools.GetAllInstances<BuildObjectMaterialSet>();
 
             levels = EditorStaticTools.GetAllInstances<LevelData>();
 

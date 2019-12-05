@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641cbd60d1db7104ea5bfc8d188c5f04, type: 3}
+  m_Name: MaterialSetFurnitureWood
+  m_EditorClassIdentifier: 
+  id: FurnitureWood1
+  materialType: Wood
+  objectType: Furniture
+  availableMaterials:
+  - {fileID: 2100000, guid: ec2247ecc70319d4fb17c1321afc5720, type: 2}
+  - {fileID: 2100000, guid: fc81dba4f76c64849b7890fd95494fc3, type: 2}
+  - {fileID: 2100000, guid: 2756107c0ec161f4b999ff792d724107, type: 2}

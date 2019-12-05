@@ -56,7 +56,7 @@ namespace EditorTools
         public static T[] GetAllInstances<T>() where T : ScriptableObject
         {
             string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);
-            // Debug.LogError("GetAllInstances: typeof(T): " + typeof(T)+" length: "+guids.Length);
+           // Debug.LogError("GetAllInstances: typeof(T): " + typeof(T)+", name: "+ typeof(T).Name+" length: "+guids.Length);
             T[] a = new T[guids.Length];
             for (int i = 0; i < guids.Length; i++)
             {
@@ -71,6 +71,7 @@ namespace EditorTools
         public static T GetFirstInstance<T>() where T : ScriptableObject
         {
             //Debug.LogWarning("typeof(T): " + typeof(T));
+           // Debug.LogWarning("typeof(T).name: " + typeof(T).Name);
             string guid = AssetDatabase.FindAssets("t:" + typeof(T).Name)[0];
             T a;
 

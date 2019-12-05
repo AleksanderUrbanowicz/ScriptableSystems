@@ -17,6 +17,24 @@ namespace EditorTools
         private BuildObjectData[] allObjectsArray;
 
 
+        [CharacterTypeSelector]
+        public string characterType;
+
+        [EmployeeTypeSelector]
+        public string employeeType;
+
+        [GuestTypeSelector]
+        public string guestType;
+
+        [MaterialTypeSelector]
+        public string materialType;
+
+        [ObjectTypeSelector]
+        public string objectType;
+
+        [BuildObjectMaterialSetSelector]
+        public string materialSet;
+
         [BuildObjectSelector]
         public string defaultBuildObject;
 
@@ -38,14 +56,7 @@ namespace EditorTools
         [ThemeUIDataSelector]
         public string uiThemeData;
 
-        [CharacterTypeSelector]
-        public string characterType;
-
-        [EmployeeTypeSelector]
-        public string employeeType;
-
-        [GuestTypeSelector]
-        public string guestType;
+   
 
         [BuildObjectDynamicParameterTypeSelector]
         public string buildObjectDynamicParameterTypes;

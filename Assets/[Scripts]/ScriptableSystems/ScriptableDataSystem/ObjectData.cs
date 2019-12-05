@@ -6,8 +6,7 @@ namespace ScriptableSystems
     public class ObjectData
     {
         public string id;
-        //public Vector3 position;
-        // public Quaternion rotation;
+        
         public float positionX;
         public float positionY;
         public float positionZ;

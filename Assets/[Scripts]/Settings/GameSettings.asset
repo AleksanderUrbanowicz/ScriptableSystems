@@ -18,13 +18,18 @@ MonoBehaviour:
     type: 2}
   scriptableSelectSystem: {fileID: 11400000, guid: 639b8e7138a82f54fa3d30de1db69521,
     type: 2}
+  characterType: Guest
+  employeeType: Receptionist
+  guestType: Pedantic
+  materialType: Wood
+  objectType: Furniture
+  materialSet: FurnitureCloth1
   defaultBuildObject: bulb6
   BuildObjectCategoryData: FurnitureCategoryData
   scene: RoomTestScene
-  level: LevelData1
+  level: LevelData3
   gameEvent: GameEvent1
   scriptableEvent: BuildSystemEventOnHit
   uiThemeData: ThemeDark
-  employeeType: Maid
   buildObjectDynamicParameterTypes: Cleanness
   buildObjectStaticParameterTypes: Prestige

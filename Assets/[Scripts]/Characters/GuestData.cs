@@ -8,5 +8,7 @@ namespace Characters
     {
         [GuestTypeSelector]
         public string GuestType;
+        
+        
     }
 }

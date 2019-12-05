@@ -8,6 +8,8 @@ namespace Characters
         public string id;
         [CharacterTypeSelector]
         public string characterType;
+        //Name + surname ?
+        public string displayName;
         public GameObject prefab;
     }
 }

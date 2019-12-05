@@ -212,7 +212,7 @@ namespace ScriptableSystems
                 GUI.backgroundColor = Color.red;
                 if (GUILayout.Button("Delete Object"))
                 {
-                    buildObjectData.Destroy();
+                    
 
                     AssetDatabase.DeleteAsset(scriptableObjectsPath + buildObjectData.id + scriptableObjectSuffix + ".asset");
                     Reset();
@@ -314,7 +314,7 @@ namespace ScriptableSystems
         {
             sceneObject = null;
             displayObject = false;
-            buildObjectData.Destroy();
+            
             InitData();
         }
 

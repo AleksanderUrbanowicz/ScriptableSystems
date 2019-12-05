@@ -12,6 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5baa52b3e9d9c429bfe9e4891171cb, type: 3}
   m_Name: Definitions
   m_EditorClassIdentifier: 
+  characterTypes:
+  - id: Guest
+  - id: Employee
+  employeeTypes:
+  - id: Maid
+  - id: ServiceWorker
+  - id: Waiter
+  - id: Receptionist
+  guestTypes:
+  - id: Default
+  - id: Pedantic
+  materialTypes:
+  - id: Wood
+  - id: Cloth
+  objectTypes:
+  - id: Furniture
   buildObjects:
   - {fileID: 11400000, guid: 3c5171089ea1ece418cb2e4f4c346659, type: 2}
   - {fileID: 11400000, guid: d87353387b5754e4b817d332a3494b0b, type: 2}
@@ -38,13 +54,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aee18fb7f37e684459a1a9ec0cfa28d6, type: 2}
   uiThemes:
   - {fileID: 11400000, guid: 23d0a29938b009f409c623e513b64dd7, type: 2}
-  employeeTypes:
-  - id: Maid
-  - id: ServiceWorker
-  - id: Waiter
+  materialSets:
+  - {fileID: 11400000, guid: c011b5e5035b7b94494943f4ea411ffd, type: 2}
+  - {fileID: 11400000, guid: 3761cf8d2dea80f4aac221dc49f36785, type: 2}
   levels:
-  - {fileID: 11400000, guid: 9a466d28d4ca34e4fa5cf1bb1f96d451, type: 2}
+  - {fileID: 11400000, guid: 989706ef2e57024419a75a11ad7742ed, type: 2}
+  - {fileID: 11400000, guid: f34364cf6a0542b4cb4ebf09aec9181c, type: 2}
   buildObjectDynamicParameterTypes:
-  - {fileID: 11400000, guid: 499923610990ebf48bdd844b13652a9a, type: 2}
+  - {fileID: 11400000, guid: 3719ccf2ae4063f418baccb704b76750, type: 2}
+  - {fileID: 11400000, guid: 5f4b0a3bd76dba247bd90f596c5b5132, type: 2}
   buildObjectStaticParameterTypes:
-  - {fileID: 11400000, guid: 65e61e1e464ebb745ac30ebf030d8be0, type: 2}
+  - {fileID: 11400000, guid: a6a37490520522140b08730be0ecba84, type: 2}
+  - {fileID: 11400000, guid: 516d65e3d976b7447a3c0e10de9b6c82, type: 2}

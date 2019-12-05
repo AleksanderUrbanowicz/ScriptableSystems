@@ -7,10 +7,12 @@ namespace Characters
 
     public class EmployeeData : CharacterDataBase
     {
-
+        
+        
         [EmployeeTypeSelector]
         public string employeeType;
         public float wage;
+        public float skill;
 
 
     }
