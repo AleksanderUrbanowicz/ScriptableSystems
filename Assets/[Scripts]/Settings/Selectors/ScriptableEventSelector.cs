@@ -11,16 +11,17 @@ namespace EditorTools
     {
         protected override void UpdateParameters()
         {
-            
+            bool b = definitionsConfig == null;
 #if UNITY_EDITOR
-            if (definitionsConfig == null)
+            if (b)
             {
                 definitionsConfig = EditorStaticTools.GetFirstInstance<Definitions>();
+                b = definitionsConfig == null;
             }
 
 #endif
 
-            if (definitionsConfig != null)
+            if (!b)
             {
 
                 parameters = definitionsConfig.scriptableEvents.Select(x => x.id).ToArray();

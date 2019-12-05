@@ -44,8 +44,9 @@ namespace EditorTools
             {
                 int index = Mathf.Max(0, Array.IndexOf(list, property.stringValue));
                 index = EditorGUI.Popup(position, property.displayName, index, list);
-
-                if (list == null || list.Length == 0)
+                bool b = list == null;
+                b = b || list.Length == 0;
+                if (b)
                 {
 
                     property.stringValue = "NULL";

@@ -35,6 +35,7 @@ namespace ScriptableSystems
             if (iconImage != null)
             {
 
+
                 switch (buttonType)
                 {
                     case ScriptableSystems.ButtonType.CONFIRM:

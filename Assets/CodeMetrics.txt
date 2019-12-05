@@ -1,0 +1,2 @@
+﻿//Reduce IF expressions in your code. Use the Single Responsibility principle for extracting a piece of code to other methods and make the method for just one responsibility. That change will reduce Cyclomatic Responsibility and improve maintainability for your code.
+                //Avoid use of switch/case statements in your code. Use Factory or Strategy design patterns instead.

@@ -158,10 +158,6 @@ namespace ScriptableSystems
                 GUILayout.Label("Grid size\nX: " + buildObjectData.gridSize.x + "   Y: " + buildObjectData.gridSize.y + "   Z: " + buildObjectData.gridSize.z);
 
 
-
-
-
-
                 GUI.backgroundColor = Color.gray;
 
 
@@ -173,23 +169,12 @@ namespace ScriptableSystems
                     buildObjectData.gridSize = CalculateGridSize(size);
                     buildObjectData.obstacleLayers = defaultObstaclesLayer;
                 }
+                GUI.backgroundColor = Color.red;
+                //if (sceneObject != null)
+                //{
+                //   GUI.backgroundColor = Color.green;
 
-                if (GUILayout.Button("Add Collider"))
-                {
-                    // AddCollider(sceneObject);
-
-                }
-
-                if (GUILayout.Button("Add Size Mesh"))
-                {
-                    // AddPreviewMesh(sceneObject);
-
-                }
-                if (sceneObject != null)
-                {
-                    GUI.backgroundColor = Color.green;
-
-                }
+                //}
 
 
                 if (buildObjectData.gridSize != Vector3.zero)
@@ -198,12 +183,12 @@ namespace ScriptableSystems
 
                 }
 
-                else
-                {
-                    GUI.backgroundColor = Color.red;
+               // else
+              //  {
+              //      GUI.backgroundColor = Color.red;
 
 
-                }
+              //  }
 
                 if (GUILayout.Button("Create Prefab"))
                 {
@@ -211,18 +196,14 @@ namespace ScriptableSystems
                     buildObjectData.objectPrefab = PrefabUtility.SaveAsPrefabAsset(sceneObject, correctPath);
 
                 }
+                GUI.backgroundColor = Color.red;
                 if (buildObjectData.objectPrefab != null)
                 {
                     GUI.backgroundColor = Color.green;
 
                 }
 
-                else
-                {
-                    GUI.backgroundColor = Color.red;
-
-
-                }
+             
                 if (GUILayout.Button("Create ScriptableObject"))
                 {
                     AssetDatabase.CreateAsset(buildObjectData, scriptableObjectsPath + buildObjectData.id + scriptableObjectSuffix + ".asset");
@@ -277,8 +258,10 @@ namespace ScriptableSystems
 
             Bounds bounds = new Bounds(_sceneObject.transform.position, Vector3.zero);
 
-            foreach (Renderer renderer in _sceneObject.GetComponentsInChildren<Renderer>())
+            Renderer[] array = _sceneObject.GetComponentsInChildren<Renderer>();
+            for (int i = 0; i < array.Length; i++)
             {
+                Renderer renderer = array[i];
                 bounds.Encapsulate(renderer.bounds);
             }
 
@@ -292,7 +275,10 @@ namespace ScriptableSystems
 
         private Vector3 CalculateGridSize(Vector3 _size)
         {
-            if (_size == null || _size == Vector3.zero)
+            bool b = _size == null;
+            b = b || _size == Vector3.zero;
+            // if (_size == null || _size == Vector3.zero)
+            if (b)
             {
                 Debug.LogError("BuildObjectEditorWindow.CalculateGridSize(Vector3) Vector3 is null or zero, returning Vector3.zero");
                 return Vector3.zero;

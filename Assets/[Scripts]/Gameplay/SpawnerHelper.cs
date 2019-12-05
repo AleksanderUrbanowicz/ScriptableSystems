@@ -27,8 +27,7 @@ namespace ScriptableSystems
             Vector3 position = new Vector3(od.positionX, od.positionY, od.positionZ);
             Quaternion rotation = new Quaternion(od.rotationX, od.rotationY, od.rotationZ, od.rotationW);
             GameObject go = Instantiate(buildObjectData.objectPrefab, position, rotation, parentTransform);
-            // layer and tag to save loaded objects
-            //go.layer=GameManager.instance.buildSystemMonoBehaviour
+            
         }
         public void SpawnObject(string _id, Vector3 position, Quaternion rotation)
         {

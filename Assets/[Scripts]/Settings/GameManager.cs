@@ -25,10 +25,7 @@ namespace Gameplay
             {
                 GameManager.instance = this;
             }
-            else
-            {
-
-            }
+           
             if (GameManager.s == null)
             {
                 GameManager.s = settings;
@@ -53,7 +50,10 @@ namespace Gameplay
 
         private void InitializeBuildSystem()
         {
-            if (s.scriptableBuildSystem != null && s.scriptableBuildSystem.initializeOnStart)
+            bool b = s.scriptableBuildSystem != null;
+            b = b && s.scriptableBuildSystem.initializeOnStart;
+           // if (s.scriptableBuildSystem != null && s.scriptableBuildSystem.initializeOnStart)
+           if(b)
             {
                 GameObject systemGO = new GameObject();
                 systemGO.transform.parent = this.transform;

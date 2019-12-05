@@ -237,9 +237,10 @@ namespace ScriptableSystems
 
         public void ShowPreview()
         {
-
+            bool b = currentPreviewObject == null;
+            b = b || raycastHit.point == buildSystemRaycast.raycastHit.point;
             if (scriptableBuildSystem.logs) Debug.Log("ShowPreview");
-            if(raycastHit.point == buildSystemRaycast.raycastHit.point)
+            if(b)
             {
 
                 if (scriptableBuildSystem.logs) Debug.LogError("ShowPreview: Hit.point have not changed");
@@ -251,11 +252,11 @@ namespace ScriptableSystems
             Vector3 normal = raycastHit.normal;
 
             
-            if (currentPreviewObject == null)
-            {
-                return;
+          //  if (currentPreviewObject == null)
+            //{
+             //   return;
 
-            }
+            //}
 
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("ShowPreview( point: " + point + "normal: " + normal);
@@ -435,29 +436,32 @@ namespace ScriptableSystems
             Gizmos.DrawLine(raycastHit.point, raycastHit.point + raycastHit.normal);
             Gizmos.color = Color.red;
             Gizmos.DrawLine(cornerAxisVector, cornerAxisVector + Vector3.right * mainAxisLength);
-            if (currentPreview != null)
+
+            bool b = currentPreview != null;
+          //  if (currentPreview != null)
+          if(b)
             {
 
                 Gizmos.DrawLine(currentPreview.transform.position, currentPreview.transform.position + Vector3.right * 1.5f);
 
-            }
+            
 
             Gizmos.color = Color.green;
             Gizmos.DrawLine(cornerAxisVector, cornerAxisVector + Vector3.up * mainAxisLength);
-            if (currentPreview != null)
-            {
+            
 
                 Gizmos.DrawLine(currentPreview.transform.position, currentPreview.transform.position + Vector3.up * 1.5f);
-            }
+            
             Gizmos.color = Color.blue;
-            if (currentPreview != null)
-            {
+            
+            
 
                 Gizmos.DrawLine(currentPreview.transform.position, currentPreview.transform.position + Vector3.forward * 1.5f);
             }
             Gizmos.DrawLine(cornerAxisVector, cornerAxisVector + Vector3.forward * mainAxisLength);
-
-            if (currentPreview != null && previewCollider!=null)
+            b = b && previewCollider != null;
+            // if (currentPreview != null && previewCollider!=null)
+            if (b)
             {
                 Vector3 halfEx = previewCollider.bounds.extents ;
                 halfEx.x *= previewCollider.transform.localScale.x;
