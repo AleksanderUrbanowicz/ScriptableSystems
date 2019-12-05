@@ -1,8 +1,6 @@
 ﻿using Characters;
 using Levels;
 using ScriptableSystems;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EditorTools

@@ -20,13 +20,14 @@ namespace ScriptableSystems
 
         private void OnEnable()
         {
-            if (Event == null )
+            if (Event == null)
             {
 
                 Debug.Log("GameEventListener:  Event == null");
                 Destroy(this);
             }
-               else {
+            else
+            {
                 Event.RegisterListener(this);
             }
         }
@@ -45,7 +46,7 @@ namespace ScriptableSystems
             if (Response != null)
             {
                 Response.Invoke();
-                Debug.Log("GameEventListener.OnEventRaised().Invoke: "+Event.name);
+                Debug.Log("GameEventListener.OnEventRaised().Invoke: " + Event.name);
             }
             else
             {
@@ -58,7 +59,7 @@ namespace ScriptableSystems
         public void Log()
         {
 
-            Debug.LogWarning("GameEventListener.Log() name: "+gameObject.name);
+            Debug.LogWarning("GameEventListener.Log() name: " + gameObject.name);
         }
     }
 }

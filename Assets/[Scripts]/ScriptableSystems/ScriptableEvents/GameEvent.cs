@@ -13,19 +13,19 @@ namespace ScriptableSystems
 
     [CreateAssetMenu(fileName = "NewGameEvent", menuName = "ScriptableSystems/Game Event")]
 
-    public  class GameEvent : ScriptableObject
+    public class GameEvent : ScriptableObject
     {
         public string id;
 
         /// <summary>
         /// The list of listeners that this event will notify if it is raised.
         /// </summary>
-        private readonly List<GameEventListener> eventListeners = 
+        private readonly List<GameEventListener> eventListeners =
             new List<GameEventListener>();
 
         public virtual void Raise()
         {
-            for(int i = eventListeners.Count -1; i >= 0; i--)
+            for (int i = eventListeners.Count - 1; i >= 0; i--)
                 eventListeners[i].OnEventRaised();
         }
 

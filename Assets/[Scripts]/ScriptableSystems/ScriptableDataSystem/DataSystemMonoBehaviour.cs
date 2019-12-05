@@ -1,10 +1,9 @@
-﻿using System.Collections;
+﻿using Gameplay;
+using Player;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-using Gameplay;
-using Player;
 namespace ScriptableSystems
 {
     public class DataSystemMonoBehaviour : MonoBehaviour
@@ -30,8 +29,8 @@ namespace ScriptableSystems
         public void SaveObjects()
         {
             GetObjectsToSave();
-            List<ObjectData> objectDatas=new List<ObjectData>(); 
-            for(int i=0;i<objectsToSave.Length;i++)
+            List<ObjectData> objectDatas = new List<ObjectData>();
+            for (int i = 0; i < objectsToSave.Length; i++)
             {
                 GameObject go = objectsToSave[i];
                 objectDatas.Add(new ObjectData(go.name, go.transform));
@@ -42,40 +41,40 @@ namespace ScriptableSystems
             bf.Serialize(file, objectDatas);
             file.Close();
         }
-        
+
         public void SavePlayerData()
         {
 
             PlayerData playerData = new PlayerData();
             playerData.cash = GameManager.instance.cash;
             PlayerPrefs.SetInt(scriptableDataSystem.playerPrefsCashKey, playerData.cash);
-          //  BinaryFormatter bf = new BinaryFormatter();
-          //  FileStream file = File.Create(Application.persistentDataPath + scriptableDataSystem.playerDataFilename);
-          //  bf.Serialize(file, playerData);
-          //  file.Close();
+            //  BinaryFormatter bf = new BinaryFormatter();
+            //  FileStream file = File.Create(Application.persistentDataPath + scriptableDataSystem.playerDataFilename);
+            //  bf.Serialize(file, playerData);
+            //  file.Close();
         }
 
         public void LoadObjects()
         {
-            if(File.Exists(Application.persistentDataPath+ scriptableDataSystem.objectsDataFilename))
+            if (File.Exists(Application.persistentDataPath + scriptableDataSystem.objectsDataFilename))
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 FileStream file = File.Open(Application.persistentDataPath + scriptableDataSystem.objectsDataFilename, FileMode.Open);
                 List<ObjectData> objectDatas = (List<ObjectData>)bf.Deserialize(file);
                 file.Close();
-                foreach(ObjectData od in objectDatas)
+                foreach (ObjectData od in objectDatas)
                 {
-                   spawnerHelper.SpawnObject(od);
+                    spawnerHelper.SpawnObject(od);
 
                 }
-               // SpawnLoadedObjects(objectDatas);
+                // SpawnLoadedObjects(objectDatas);
             }
 
         }
 
         public void SpawnLoadedObjects(List<ObjectData> _objectDatas)
         {
-            foreach(ObjectData od in _objectDatas)
+            foreach (ObjectData od in _objectDatas)
             {
 
 
@@ -96,14 +95,14 @@ namespace ScriptableSystems
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 GetObjectsToSave();
-                
-                
+
+
 
             }
             if (Input.GetKeyDown(KeyCode.X))
             {
                 SaveObjects();
-                Debug.LogError("SaveObjects: "+ Application.persistentDataPath + scriptableDataSystem.objectsDataFilename);
+                Debug.LogError("SaveObjects: " + Application.persistentDataPath + scriptableDataSystem.objectsDataFilename);
                 SavePlayerData();
                 Debug.LogError("PlayerPrefs.Cash: " + PlayerPrefs.GetInt(scriptableDataSystem.playerPrefsCashKey));
 
@@ -122,6 +121,6 @@ namespace ScriptableSystems
 
             }
         }
-    
-}
+
+    }
 }

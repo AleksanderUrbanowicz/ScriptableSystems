@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using System.Linq;
 using UnityEditor;
-using System;
+using UnityEngine;
 
 namespace EditorTools
 {
@@ -27,7 +25,7 @@ namespace EditorTools
                 parameters = definitionsConfig.scriptableEvents.Select(x => x.id).ToArray();
 
             }
-            
+
         }
     }
 

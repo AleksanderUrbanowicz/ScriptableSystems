@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScriptableSystems
 {
@@ -12,7 +9,7 @@ namespace ScriptableSystems
         public Material heighlightedMaterial;
         public Material sellectedMaterial;
         public ScriptableSelectSystem scriptableSelectSystem;
-        public float raycastMaxDistance ;
+        public float raycastMaxDistance;
         public BuildSystemRaycast buildSystemRaycast;
         public int raycastInterval;
         public Camera highlightCamera;
@@ -34,7 +31,7 @@ namespace ScriptableSystems
 
             raycastMaxDistance = _scriptableSelectSystem.raycastMaxDistance;
             raycastInterval = _scriptableSelectSystem.raycastInterval;
-            highlightedLayer =_scriptableSelectSystem.highlightedLayer;
+            highlightedLayer = _scriptableSelectSystem.highlightedLayer;
             InitHighlightCamera();
         }
 
@@ -55,7 +52,7 @@ namespace ScriptableSystems
                     buildSystemRaycast.StartExecute(_layersToBuildOn: scriptableSelectSystem.highlightableLayerMask);
 
                 }
-            
+
             }
         }
 
@@ -78,7 +75,7 @@ namespace ScriptableSystems
             scriptableEventListenerOnMiss.Validate();
         }
 
-     
+
 
         public void InitRaycaster(ScriptableSelectSystem _scriptableSelectSystem)
         {
@@ -94,18 +91,18 @@ namespace ScriptableSystems
             highlightCamera.clearFlags = CameraClearFlags.Depth;
             transform.parent = buildSystemRaycast.cam.transform;
             transform.localPosition = Vector3.zero;
-            highlightCamera.cullingMask=LayerMask.NameToLayer(highlightedLayer);
-            highlightCamera.backgroundColor = new Color(0,0,0,0);
-           // highlightCamera.render =RenderTargetSetupe;
+            highlightCamera.cullingMask = LayerMask.NameToLayer(highlightedLayer);
+            highlightCamera.backgroundColor = new Color(0, 0, 0, 0);
+            // highlightCamera.render =RenderTargetSetupe;
 
         }
 
         private void HandleSelectMiss()
         {
             Debug.LogError("HandleSelectMiss");
-            highlightedObject.layer= LayerMask.NameToLayer(tempLayer);
-            
-            
+            highlightedObject.layer = LayerMask.NameToLayer(tempLayer);
+
+
         }
 
         private void HandleSelectHit()

@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using EditorTools;
 using ScriptableSystems;
+using UnityEngine;
 using UnityEngine.UI;
-using EditorTools;
 
 namespace Gameplay
 {
@@ -25,7 +24,7 @@ namespace Gameplay
             {
                 GameManager.instance = this;
             }
-           
+
             if (GameManager.s == null)
             {
                 GameManager.s = settings;
@@ -52,8 +51,8 @@ namespace Gameplay
         {
             bool b = s.scriptableBuildSystem != null;
             b = b && s.scriptableBuildSystem.initializeOnStart;
-           // if (s.scriptableBuildSystem != null && s.scriptableBuildSystem.initializeOnStart)
-           if(b)
+            // if (s.scriptableBuildSystem != null && s.scriptableBuildSystem.initializeOnStart)
+            if (b)
             {
                 GameObject systemGO = new GameObject();
                 systemGO.transform.parent = this.transform;

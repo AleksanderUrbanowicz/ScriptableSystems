@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 namespace ScriptableSystems
@@ -12,6 +11,6 @@ namespace ScriptableSystems
         public string id;
         public List<BuildObjectData> items;
 
-        
+
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScriptableSystems
 {
@@ -9,6 +7,6 @@ namespace ScriptableSystems
     public class BuildObjectStaticParameterType : ScriptableObject
     {
         public string id;
-       
+
     }
 }

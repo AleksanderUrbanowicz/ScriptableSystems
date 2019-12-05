@@ -1,10 +1,7 @@
-﻿
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using System.Linq;
 using UnityEditor;
-using System;
+using UnityEngine;
 
 namespace EditorTools
 {
@@ -50,7 +47,7 @@ namespace EditorTools
 
 
 #if UNITY_EDITOR
-    [CustomPropertyDrawer(typeof(GameEventSelector),true)]
+    [CustomPropertyDrawer(typeof(GameEventSelector), true)]
     public class GameEventSelectorSelectorDrawer : PropertyDrawer
     {
 

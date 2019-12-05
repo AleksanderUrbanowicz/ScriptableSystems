@@ -1,5 +1,4 @@
 ﻿using Gameplay;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -35,7 +34,7 @@ namespace ScriptableSystems
         private RaycastHit raycastHit;
 
         public int cash;
-   
+
         public float offset = 1.0f;
         public float gridSize = 1.0f;
         public float previewSnapFactor = 1.0f;
@@ -50,13 +49,13 @@ namespace ScriptableSystems
         public Vector3 cornerAxisVector = new Vector3(-5, 0, -5);
         public int counter;
         public ScriptableBuildSystem scriptableBuildSystem;
-       
+
         public ScriptableEventListener scriptableEventListenerOnHit;
         public ScriptableEventListener scriptableEventListenerOnMiss;
         public void Init(ScriptableBuildSystem _scriptableBuildSystem)
         {
             scriptableBuildSystem = _scriptableBuildSystem;
-          
+
             InitRaycaster(_scriptableBuildSystem);
             InitEventListeners(_scriptableBuildSystem);
 
@@ -108,56 +107,56 @@ namespace ScriptableSystems
 
         void Update()
         {
-         
 
-                if (isBuilding)
+
+            if (isBuilding)
+            {
+                if (Input.GetKeyDown(KeyCode.N))
                 {
-                    if (Input.GetKeyDown(KeyCode.N))
+                    currentBuildObjectIndex++;
+                    CancelPreview();
+                    CustomStart();
+                }
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    RotatePreview(currentPreviewObject);
+                }
+                if (Input.GetKeyDown(KeyCode.B))
+                {
+                    isBuilding = !isBuilding;
+                    CancelPreview();
+                }
+
+                if (isShowingPreview)
+                {
+                    ShowPreview();
+                    if (canBeBuild && Input.GetKeyDown(KeyCode.E))
                     {
-                        currentBuildObjectIndex++;
-                        CancelPreview();
+
+                        BuildPreviewObject();
                         CustomStart();
-                    }
-                    if (Input.GetKeyDown(KeyCode.R))
-                    {
-                        RotatePreview(currentPreviewObject);
-                    }
-                    if (Input.GetKeyDown(KeyCode.B))
-                    {
-                        isBuilding = !isBuilding;
-                        CancelPreview();
-                    }
-
-                    if (isShowingPreview)
-                    {
-                        ShowPreview();
-                        if (canBeBuild && Input.GetKeyDown(KeyCode.E))
-                        {
-
-                            BuildPreviewObject();
-                            CustomStart();
-                        }
-
                     }
 
                 }
-                else
+
+            }
+            else
+            {
+
+                if (Input.GetKeyDown(KeyCode.B))
                 {
-
-                    if (Input.GetKeyDown(KeyCode.B))
-                    {
-                        isBuilding = !isBuilding;
+                    isBuilding = !isBuilding;
 
 
-                        CustomStart();
-
-
-                    }
+                    CustomStart();
 
 
                 }
-                
-            
+
+
+            }
+
+
 
         }
 
@@ -181,9 +180,9 @@ namespace ScriptableSystems
             currentPreviewGameObject.name = "PreviewPrefab";
             currentPreviewObject = currentBuildObject;
             currentPreviewGameObject.transform.localPosition += currentBuildObject.offset;
-            
+
             currentPreview = currentPreviewGameObject.transform;
-           // AddPreviewCollider(currentPreviewGameObject, currentPreviewObject);
+            // AddPreviewCollider(currentPreviewGameObject, currentPreviewObject);
             AddPreviewMesh(currentPreviewGameObject, currentPreviewObject);
         }
 
@@ -200,17 +199,17 @@ namespace ScriptableSystems
             go.transform.parent = buildObjectsParent;
             AddPreviewCollider(go, currentPreviewObject);
         }
-        
+
 
         public void StartRaycastPreview()
         {
-           
+
             buildSystemRaycast.StartExecute(currentPreviewObject.layersToBuildOn);
-   
+
         }
         public void CancelPreview()
         {
-           if(scriptableBuildSystem.logs) Debug.Log("CancelPreview");
+            if (scriptableBuildSystem.logs) Debug.Log("CancelPreview");
             if (currentPreviewGameObject != null)
             {
                 Destroy(currentPreviewGameObject);
@@ -240,7 +239,7 @@ namespace ScriptableSystems
             bool b = currentPreviewObject == null;
             b = b || raycastHit.point == buildSystemRaycast.raycastHit.point;
             if (scriptableBuildSystem.logs) Debug.Log("ShowPreview");
-            if(b)
+            if (b)
             {
 
                 if (scriptableBuildSystem.logs) Debug.LogError("ShowPreview: Hit.point have not changed");
@@ -248,13 +247,13 @@ namespace ScriptableSystems
             }
             raycastHit = buildSystemRaycast.raycastHit;
 
-          Vector3  point = raycastHit.point;
+            Vector3 point = raycastHit.point;
             Vector3 normal = raycastHit.normal;
 
-            
-          //  if (currentPreviewObject == null)
+
+            //  if (currentPreviewObject == null)
             //{
-             //   return;
+            //   return;
 
             //}
 
@@ -263,13 +262,13 @@ namespace ScriptableSystems
 
             float distance = Vector3.Distance(currentPosition, point);
             sb.AppendLine("Distance: " + distance);
-            if (distance > (previewSnapFactor * gridSize) )
+            if (distance > (previewSnapFactor * gridSize))
             {
-        
-                CalculatePreview(point,normal);
+
+                CalculatePreview(point, normal);
                 CheckObject();
             }
-         
+
 
 
         }
@@ -299,14 +298,14 @@ namespace ScriptableSystems
             if (scriptableBuildSystem.logs) Debug.Log("CheckAvailability");
             collisionCenterDebug = currentPreview.position + previewCollider.center;
             Vector3 halfEx = previewCollider.bounds.extents * currentPreviewObject.collsionBoundsFraction;
-           // halfEx.x *= previewCollider.transform.localScale.x;
-           // halfEx.y *= previewCollider.transform.localScale.y;
-          //  halfEx.z *= previewCollider.transform.localScale.z;
+            // halfEx.x *= previewCollider.transform.localScale.x;
+            // halfEx.y *= previewCollider.transform.localScale.y;
+            //  halfEx.z *= previewCollider.transform.localScale.z;
 
-            Debug.Log("halfEx:"+ halfEx); 
-                 Debug.Log("previewCollider.bounds.extents:" + previewCollider.bounds.extents);
+            Debug.Log("halfEx:" + halfEx);
+            Debug.Log("previewCollider.bounds.extents:" + previewCollider.bounds.extents);
 
-             Collider[] hitColliders = Physics.OverlapBox(currentPreview.position + previewCollider.center, halfEx, previewCollider.transform.rotation, currentPreviewObject.obstacleLayers);
+            Collider[] hitColliders = Physics.OverlapBox(currentPreview.position + previewCollider.center, halfEx, previewCollider.transform.rotation, currentPreviewObject.obstacleLayers);
 
             // Collider[] hitColliders = Physics.OverlapBox(currentPreview.position + previewCollider.center, previewCollider.bounds.extents * currentPreviewObject.collsionBoundsFraction, Quaternion.identity, currentPreviewObject.obstacleLayers);
             int i = 0;
@@ -315,16 +314,16 @@ namespace ScriptableSystems
             while (i < hitColliders.Length)
             {
                 Collider hitCollider = hitColliders[i];
-                
+
                 if (hitCollider.gameObject != this.gameObject && hitCollider.gameObject.layer != currentPreviewObject.layersToBuildOn)
                 {
-                    
+
                     return false;
                 }
 
                 i++;
             }
-          
+
 
             return true;
 
@@ -332,7 +331,7 @@ namespace ScriptableSystems
 
         public void CheckObject()
         {
-           
+
 
 
             if (CheckAvailability() == true && GameManager.instance.cash >= currentBuildObject.cost)
@@ -346,7 +345,7 @@ namespace ScriptableSystems
                 SetPreviewColor(unavailableColor);
 
             }
-           
+
         }
 
         public void SetPreviewColor(Color c)
@@ -386,7 +385,7 @@ namespace ScriptableSystems
             cube.transform.SetParent(_sceneGO.transform);
 
             cube.transform.localScale = new Vector3(_currentPreviewObject.gridSize.x, _currentPreviewObject.gridSize.y, _currentPreviewObject.gridSize.z);
-            if (_currentPreviewObject.objectOrientation ==ObjectOrientation.WALL)
+            if (_currentPreviewObject.objectOrientation == ObjectOrientation.WALL)
             {
                 cube.transform.localPosition = new Vector3(0, 0, -(_currentPreviewObject.gridSize.z / 2.0f) + _currentPreviewObject.actualSize.z);
 
@@ -419,12 +418,12 @@ namespace ScriptableSystems
             Vector3 orientationVectorMultiplied = new Vector3(_currentPreviewObject.orientationVector.x * collisionNormal.x,
                 _currentPreviewObject.orientationVector.y * collisionNormal.y,
                  _currentPreviewObject.orientationVector.z * collisionNormal.z);
-       
+
             userRotationF = newAngle;
             Debug.Log("userRotation: " + userRotationF);
             CalculatePreview(raycastHit.point, raycastHit.normal);
             CheckObject();
-           
+
         }
 
         void OnDrawGizmos()
@@ -438,23 +437,23 @@ namespace ScriptableSystems
             Gizmos.DrawLine(cornerAxisVector, cornerAxisVector + Vector3.right * mainAxisLength);
 
             bool b = currentPreview != null;
-          //  if (currentPreview != null)
-          if(b)
+            //  if (currentPreview != null)
+            if (b)
             {
 
                 Gizmos.DrawLine(currentPreview.transform.position, currentPreview.transform.position + Vector3.right * 1.5f);
 
-            
 
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(cornerAxisVector, cornerAxisVector + Vector3.up * mainAxisLength);
-            
+
+                Gizmos.color = Color.green;
+                Gizmos.DrawLine(cornerAxisVector, cornerAxisVector + Vector3.up * mainAxisLength);
+
 
                 Gizmos.DrawLine(currentPreview.transform.position, currentPreview.transform.position + Vector3.up * 1.5f);
-            
-            Gizmos.color = Color.blue;
-            
-            
+
+                Gizmos.color = Color.blue;
+
+
 
                 Gizmos.DrawLine(currentPreview.transform.position, currentPreview.transform.position + Vector3.forward * 1.5f);
             }
@@ -463,16 +462,16 @@ namespace ScriptableSystems
             // if (currentPreview != null && previewCollider!=null)
             if (b)
             {
-                Vector3 halfEx = previewCollider.bounds.extents ;
+                Vector3 halfEx = previewCollider.bounds.extents;
                 halfEx.x *= previewCollider.transform.localScale.x;
                 halfEx.y *= previewCollider.transform.localScale.y;
                 halfEx.z *= previewCollider.transform.localScale.z;
                 Gizmos.matrix = Matrix4x4.TRS(previewCollider.transform.position + previewCollider.center, previewCollider.transform.rotation, previewCollider.transform.localScale);
                 Gizmos.color = Color.magenta;
-                
-               // Gizmos.DrawCube(Vector3.zero, Vector3.one);
+
+                // Gizmos.DrawCube(Vector3.zero, Vector3.one);
             }
-                
+
         }
     }
 }

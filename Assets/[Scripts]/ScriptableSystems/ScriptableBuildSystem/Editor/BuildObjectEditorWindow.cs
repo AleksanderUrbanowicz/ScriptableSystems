@@ -1,7 +1,6 @@
-﻿using UnityEngine;
+﻿using EditorTools;
 using UnityEditor;
-using ScriptableSystems;
-using EditorTools;
+using UnityEngine;
 
 namespace ScriptableSystems
 {
@@ -183,12 +182,12 @@ namespace ScriptableSystems
 
                 }
 
-               // else
-              //  {
-              //      GUI.backgroundColor = Color.red;
+                // else
+                //  {
+                //      GUI.backgroundColor = Color.red;
 
 
-              //  }
+                //  }
 
                 if (GUILayout.Button("Create Prefab"))
                 {
@@ -203,7 +202,7 @@ namespace ScriptableSystems
 
                 }
 
-             
+
                 if (GUILayout.Button("Create ScriptableObject"))
                 {
                     AssetDatabase.CreateAsset(buildObjectData, scriptableObjectsPath + buildObjectData.id + scriptableObjectSuffix + ".asset");

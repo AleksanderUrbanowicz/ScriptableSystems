@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScriptableSystems
 {
@@ -11,17 +9,17 @@ namespace ScriptableSystems
         public Material heighlightedMaterial;
         public Material sellectedMaterial;
         public LayerMask highlightableLayerMask;
-        
+
         public string highlightedLayer;
         public float raycastMaxDistance = 12.0f;
-    
+
         public int raycastInterval = 1;
 
         public ScriptableEvent EventSelectRaycastHit;
         public ScriptableEvent EventSelectRaycastMiss;
         public override void Initialize(GameObject obj)
         {
-         
+
             obj.name = id;
             SelectSystemMonoBehaviour selectSystemMonoBehaviour = obj.AddComponent<SelectSystemMonoBehaviour>();
             if (selectSystemMonoBehaviour != null)

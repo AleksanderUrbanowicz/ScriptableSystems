@@ -1,6 +1,4 @@
 ﻿using EditorTools;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Characters
@@ -9,11 +7,11 @@ namespace Characters
 
     public class EmployeeData : CharacterDataBase
     {
-        
+
         [EmployeeTypeSelector]
         public string employeeType;
         public float wage;
 
-       
+
     }
 }

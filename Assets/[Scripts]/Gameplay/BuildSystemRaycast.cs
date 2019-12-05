@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScriptableSystems
 {
@@ -13,9 +11,9 @@ namespace ScriptableSystems
         public bool isRaycasting;
         public bool stopAfterHit;
         public int raycastInterval;
-        public int counter=0;
+        public int counter = 0;
         public float raycastMaxDistance = 10.0f;
-  
+
 
         public Vector3 collisionNormal;
         public LayerMask layersToCheck;
@@ -26,18 +24,18 @@ namespace ScriptableSystems
 
         public void Init(ScriptableBuildSystem scriptableBuildSystem)
         {
-            if(cam==null)
+            if (cam == null)
             {
 
                 cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
 
             }
-            layersToCheck= scriptableBuildSystem.buildObjects.items[0].layersToBuildOn;
+            layersToCheck = scriptableBuildSystem.buildObjects.items[0].layersToBuildOn;
             ScriptableEventHit = scriptableBuildSystem.EventPreviewRaycastHit;
             ScriptableEventMiss = scriptableBuildSystem.EventPreviewRaycastMiss;
             raycastInterval = scriptableBuildSystem.raycastInterval;
             raycastMaxDistance = scriptableBuildSystem.raycastMaxDistance;
-         
+
         }
 
         public void Init(ScriptableSelectSystem scriptableSelectSystem)
@@ -61,15 +59,15 @@ namespace ScriptableSystems
             if (isRaycasting)
             {
                 counter++;
-                if(counter>=raycastInterval)
+                if (counter >= raycastInterval)
                 {
-                    
+
                     if (output != Physics.Raycast(cam.position, cam.forward, out raycastHit, raycastMaxDistance, layersToCheck))
                     {
                         output = !output;
-                        if(output)
+                        if (output)
                         {
-                            if(stopAfterHit)
+                            if (stopAfterHit)
                             {
                                 StopExecute();
 
@@ -77,14 +75,14 @@ namespace ScriptableSystems
                             ScriptableEventHit.Raise();
                         }
                         else { ScriptableEventMiss.Raise(); }
-                        
+
 
                     }
-                    
-  
+
+
                     counter = 0;
                 }
-              
+
             }
         }
 
@@ -97,6 +95,6 @@ namespace ScriptableSystems
         {
             isRaycasting = false;
         }
-   
+
     }
 }

@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using System.Linq;
 using UnityEditor;
-using System;
+using UnityEngine;
 
 namespace EditorTools
 {
     public class BuildObjectSelector : PropertyAttribute
     {
         private Definitions definitionsConfig;
-        private string[]  parameters;
+        private string[] parameters;
 
         public delegate string[] GetStringList();
         public string[] Elements
@@ -52,7 +50,7 @@ namespace EditorTools
     [CustomPropertyDrawer(typeof(BuildObjectSelector))]
     public class BuildObjectSelectorDrawer : PropertyDrawer
     {
-        
+
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var stringInList = attribute as BuildObjectSelector;
@@ -62,7 +60,7 @@ namespace EditorTools
                 int index = Mathf.Max(0, Array.IndexOf(list, property.stringValue));
                 index = EditorGUI.Popup(position, property.displayName, index, list);
 
-               
+
 
                 if (list == null || list.Length == 0)
                 {
@@ -74,7 +72,7 @@ namespace EditorTools
                     property.stringValue = list[index];
                 }
             }
-         
+
             else
             {
                 base.OnGUI(position, property, label);

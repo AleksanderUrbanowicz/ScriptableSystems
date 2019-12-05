@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScriptableSystems
 {
@@ -21,7 +19,7 @@ namespace ScriptableSystems
         public ScriptableEvent ScriptableEventHit;
         public ScriptableEvent ScriptableEventMiss;
 
-        public void Init( )
+        public void Init()
         {
             target = GameObject.FindGameObjectWithTag("MainCamera").transform;
 

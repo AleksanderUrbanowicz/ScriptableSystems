@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ScriptableSystems
 {
     [CreateAssetMenu(fileName = "BuildSystem", menuName = "ScriptableSystems/Build System/System Asset")]
-   public class ScriptableBuildSystem : ScriptableSystem
+    public class ScriptableBuildSystem : ScriptableSystem
 
     {
 
-        
+
         public string buildObjectLayerString;
 
         public BuildObjectListData buildObjects;
@@ -26,7 +23,7 @@ namespace ScriptableSystems
 
         public ScriptableEvent EventPreviewRaycastHit;
         public ScriptableEvent EventPreviewRaycastMiss;
-        public int raycastInterval=1;
+        public int raycastInterval = 1;
         public int updateInterval = 2;
         public bool logs;
 
@@ -34,20 +31,20 @@ namespace ScriptableSystems
         {
             //base.Initialize(obj);
             obj.name = id;
-            BuildSystemMonoBehaviour buildSystemMonoBehaviour = obj.AddComponent< BuildSystemMonoBehaviour>();
-              if (buildSystemMonoBehaviour != null)
-             {
+            BuildSystemMonoBehaviour buildSystemMonoBehaviour = obj.AddComponent<BuildSystemMonoBehaviour>();
+            if (buildSystemMonoBehaviour != null)
+            {
 
                 buildSystemMonoBehaviour.Init(this);
-             }
+            }
 
             Debug.Log("override ScriptableBuildSystem.Initialize():" + obj.name);
-            
-           
-        }
-       
 
-  
+
+        }
+
+
+
     }
-    
+
 }

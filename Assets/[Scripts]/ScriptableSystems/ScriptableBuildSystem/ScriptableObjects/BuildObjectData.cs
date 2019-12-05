@@ -1,7 +1,4 @@
-﻿using EditorTools;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace ScriptableSystems
@@ -18,7 +15,7 @@ namespace ScriptableSystems
         public Vector3 actualSize;
         public Vector3 gridSize;
         public Vector3 orientationVector;
-        
+
         public int cost;
         public ObjectOrientation objectOrientation;
         public float rotationStep;
@@ -30,11 +27,11 @@ namespace ScriptableSystems
         public List<BuildObjectDynamicParameter> dynamicParameters;
         public List<BuildObjectStaticParameter> staticParameters;
 
-       // [BuildObjectDynamicParameterTypeSelector]
+        // [BuildObjectDynamicParameterTypeSelector]
         //public List<string> dynamicParameterTypes;
 
         //[BuildObjectStaticParameterTypeSelector]
-       // public List<string> staticParameterTypes;
+        // public List<string> staticParameterTypes;
         public BuildObjectData()
         {
             objectOrientation = ObjectOrientation.FLOOR;
@@ -51,8 +48,8 @@ namespace ScriptableSystems
 
         public void Destroy()
         {
-            
-         
+
+
         }
 
         private void OnEnable()

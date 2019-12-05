@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 //#if UNITY_EDITOR
 namespace ScriptableSystems
 {
@@ -18,21 +14,21 @@ namespace ScriptableSystems
         private ScriptableEvent OnStartEvent;
         private ScriptableEvent OnStopEvent;
         public virtual void Initialize(GameObject obj)
-        { 
-             obj.name = id;
-            
+        {
+            obj.name = id;
+
             if (monoBehaviourScript != null)
             {
-               // MonoBehaviour scriptableSystemMB = obj.AddComponent(monoBehaviourScript.GetClass()) as MonoBehaviour;
-              //  if (scriptableSystemMB != null)
-               // {
+                // MonoBehaviour scriptableSystemMB = obj.AddComponent(monoBehaviourScript.GetClass()) as MonoBehaviour;
+                //  if (scriptableSystemMB != null)
+                // {
 
-                   // scriptableSystemMB.Init(this);
-               // }
+                // scriptableSystemMB.Init(this);
+                // }
             }
-            
 
-           
+
+
 
             OnInitializedEvent.Raise();
         }

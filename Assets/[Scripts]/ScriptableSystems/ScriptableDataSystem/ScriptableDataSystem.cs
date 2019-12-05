@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 namespace ScriptableSystems
 {
     [CreateAssetMenu(fileName = "DataSystem", menuName = "ScriptableSystems/Data System/System Asset")]
@@ -12,8 +10,8 @@ namespace ScriptableSystems
         public string objectsDataFilename = "/objectsData.dat";
 
         public string objectsTag = "Object";
-        public string playerPrefsCashKey="Cash";
-        
+        public string playerPrefsCashKey = "Cash";
+
         public override void Initialize(GameObject obj)
         {
             //base.Initialize(obj);
@@ -30,7 +28,7 @@ namespace ScriptableSystems
 
         }
 
-     
+
     }
 
 }
