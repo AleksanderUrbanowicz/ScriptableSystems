@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Characters
 {
     [Serializable]
-    public class EmployeeType
+    public class CharacterType
     {
         public string id;
     }

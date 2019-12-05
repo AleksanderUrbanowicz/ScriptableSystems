@@ -26,3 +26,5 @@ MonoBehaviour:
   scriptableEvent: BuildSystemEventOnHit
   uiThemeData: ThemeDark
   employeeType: Maid
+  buildObjectDynamicParameterTypes: Cleanness
+  buildObjectStaticParameterTypes: Prestige

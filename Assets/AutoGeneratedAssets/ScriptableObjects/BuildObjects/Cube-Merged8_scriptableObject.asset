@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1386f2c2aa8a1c842af3c72cd8f56003, type: 3}
-  m_Name: Monitor_scriptableObject
+  m_Name: Cube-Merged8_scriptableObject
   m_EditorClassIdentifier: 
-  id: Monitor
-  objectPrefab: {fileID: 3580706390789098197, guid: 4dfc17e6e26b209439b7fbdf2359dfca,
+  id: Cube-Merged8
+  objectPrefab: {fileID: 7138989732939160065, guid: 5190b610d99aba649a0df25556c1c678,
     type: 3}
-  offset: {x: 0, y: 0, z: -0.25}
-  actualSize: {x: 0.8543415, y: 0.761112, z: 0.7323532}
-  gridSize: {x: 2, y: 1, z: 1}
+  offset: {x: 0, y: 0, z: 0}
+  actualSize: {x: 0.6137047, y: 1.6786671, z: 0.6251695}
+  gridSize: {x: 1, y: 2, z: 1}
   orientationVector: {x: 0, y: 1, z: 0}
-  cost: 300
+  cost: 46
   objectOrientation: 1
   rotationStep: 90
   layersToBuildOn:
@@ -27,5 +27,17 @@ MonoBehaviour:
     m_Bits: 2048
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 2105344
+    m_Bits: 2097152
   collsionBoundsFraction: 0.95
+  dynamicParameters:
+  - parameterType: Cleanness
+    initValue: 100
+    decreaseRate: 0.5
+  - parameterType: Durability
+    initValue: 100
+    decreaseRate: 0.25
+  staticParameters:
+  - parameterType: Prestige
+    value: 1
+  - parameterType: Hygiene
+    value: 1

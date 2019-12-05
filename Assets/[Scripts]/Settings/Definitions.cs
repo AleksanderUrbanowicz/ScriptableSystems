@@ -1,11 +1,14 @@
-﻿using ScriptableSystems;
+﻿using Characters;
+using Levels;
+using ScriptableSystems;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+namespace EditorTools
+{
     //[CreateAssetMenu(fileName = "Definitions", menuName = "Settings/Definitions")]
-public class Definitions : ScriptableObject
+    public class Definitions : ScriptableObject
     {
         public BuildObjectData[] buildObjects;
         public BuildObjectCategoryData[] buildObjectCategories;
@@ -13,8 +16,14 @@ public class Definitions : ScriptableObject
         public GameEvent[] gameEvents;
         public ScriptableEvent[] scriptableEvents;
         public ThemeUIData[] uiThemes;
+        public CharacterType[] characterTypes;
         public EmployeeType[] employeeTypes;
+        public GuestType[] guestTypes;
+
         public LevelData[] levels;
+        public BuildObjectDynamicParameterType[] buildObjectDynamicParameterTypes;
+        public BuildObjectStaticParameterType[] buildObjectStaticParameterTypes;
+
         private void OnEnable()
         {
             OnEnableMethod();
@@ -33,6 +42,12 @@ public class Definitions : ScriptableObject
             uiThemes = EditorStaticTools.GetAllInstances<ThemeUIData>();
 
             levels = EditorStaticTools.GetAllInstances<LevelData>();
+
+            buildObjectDynamicParameterTypes = EditorStaticTools.GetAllInstances<BuildObjectDynamicParameterType>();
+            buildObjectStaticParameterTypes = EditorStaticTools.GetAllInstances<BuildObjectStaticParameterType>();
+
 #endif
+        }
+
     }
-    }
+}

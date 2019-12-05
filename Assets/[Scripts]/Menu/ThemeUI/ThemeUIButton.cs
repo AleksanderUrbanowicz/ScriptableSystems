@@ -3,70 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
-[RequireComponent(typeof(Image))]
-public class ThemeUIButton : ThemeUI
+namespace ScriptableSystems
 {
-    Image image;
-    Button button;
-
-    public Image iconImage;
-    public ScriptableSystems.ButtonType buttonType;
-
-    protected override void OnThemeDraw()
+    [RequireComponent(typeof(Button))]
+    [RequireComponent(typeof(Image))]
+    public class ThemeUIButton : ThemeUI
     {
-        base.OnThemeDraw();
-        image = GetComponent<Image>();
-        
-        button = GetComponent<Button>();
-        button.targetGraphic = image;
-        image.sprite = themeData.defaultButtonSprite;
-        image.type = themeData.buttonImageType;
-        image.color = themeData.defaultColor;
+        Image image;
+        Button button;
 
-        if(themeData.iconSize!=Vector2.zero)
+        public Image iconImage;
+        public ScriptableSystems.ButtonType buttonType;
+
+        protected override void OnThemeDraw()
         {
-            iconImage.rectTransform.sizeDelta = themeData.iconSize;
+            base.OnThemeDraw();
+            image = GetComponent<Image>();
 
-        }
+            button = GetComponent<Button>();
+            button.targetGraphic = image;
+            image.sprite = themeData.defaultButtonSprite;
+            image.type = themeData.buttonImageType;
+            image.color = themeData.defaultColor;
 
-        if(iconImage!=null)
-        {
-
-            switch (buttonType)
+            if (themeData.iconSize != Vector2.zero)
             {
-                case ScriptableSystems.ButtonType.CONFIRM:
-                    {
-
-                        iconImage.sprite = themeData.confirmationIcon;
-                        image.color = themeData.confirmationColor;
-                        break;
-                    }
-                case ScriptableSystems.ButtonType.WARNING:
-                    {
-
-                        iconImage.sprite = themeData.warningIcon;
-                        image.color = themeData.warningColor;
-                        break;
-                    }
-                case ScriptableSystems.ButtonType.ALERT:
-                    {
-
-                        iconImage.sprite = themeData.alertIcon;
-                        image.color = themeData.alertColor;
-                        break;
-                    }
-                case ScriptableSystems.ButtonType.DEFAULT:
-                    {
-
-                        iconImage.enabled = false;
-                        image.color = themeData.defaultColor;
-                        break;
-                    }
+                iconImage.rectTransform.sizeDelta = themeData.iconSize;
 
             }
 
-        }
-    }
+            if (iconImage != null)
+            {
 
+                switch (buttonType)
+                {
+                    case ScriptableSystems.ButtonType.CONFIRM:
+                        {
+
+                            iconImage.sprite = themeData.confirmationIcon;
+                            image.color = themeData.confirmationColor;
+                            break;
+                        }
+                    case ScriptableSystems.ButtonType.WARNING:
+                        {
+
+                            iconImage.sprite = themeData.warningIcon;
+                            image.color = themeData.warningColor;
+                            break;
+                        }
+                    case ScriptableSystems.ButtonType.ALERT:
+                        {
+
+                            iconImage.sprite = themeData.alertIcon;
+                            image.color = themeData.alertColor;
+                            break;
+                        }
+                    case ScriptableSystems.ButtonType.DEFAULT:
+                        {
+
+                            iconImage.enabled = false;
+                            image.color = themeData.defaultColor;
+                            break;
+                        }
+
+                }
+
+            }
+        }
+
+    }
 }

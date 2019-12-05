@@ -44,3 +44,7 @@ MonoBehaviour:
   - id: Waiter
   levels:
   - {fileID: 11400000, guid: 9a466d28d4ca34e4fa5cf1bb1f96d451, type: 2}
+  buildObjectDynamicParameterTypes:
+  - {fileID: 11400000, guid: 499923610990ebf48bdd844b13652a9a, type: 2}
+  buildObjectStaticParameterTypes:
+  - {fileID: 11400000, guid: 65e61e1e464ebb745ac30ebf030d8be0, type: 2}

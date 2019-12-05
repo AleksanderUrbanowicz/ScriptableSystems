@@ -41,9 +41,20 @@ namespace EditorTools
         [ThemeUIDataSelector]
         public string uiThemeData;
 
+        [CharacterTypeSelector]
+        public string characterType;
+
         [EmployeeTypeSelector]
         public string employeeType;
-        // public List<BuildObjectData> allObjects;
+
+        [GuestTypeSelector]
+        public string guestType;
+
+        [BuildObjectDynamicParameterTypeSelector]
+        public string buildObjectDynamicParameterTypes;
+
+        [BuildObjectStaticParameterTypeSelector]
+        public string buildObjectStaticParameterTypes;
 
         private void OnEnable()
         {

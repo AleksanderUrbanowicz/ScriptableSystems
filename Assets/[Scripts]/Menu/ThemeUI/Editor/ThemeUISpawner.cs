@@ -3,38 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-
-public class ThemeUISpawner : Editor
+namespace ScriptableSystems
 {
-  [MenuItem("GameObject/ThemeUI/Button", priority =0)]
-  public static void AddButton()
+    public class ThemeUISpawner : Editor
     {
-        Create("ThemeButton");
-
-    }
-
-    [MenuItem("GameObject/ThemeUI/Panel", priority = 0)]
-
-    public static void AddPanel()
-    {
-        Create("ThemePanel");
-
-    }
-
-    public static GameObject selectedObject;
-
-    private static GameObject Create(string name)
-    {
-        GameObject instance = Instantiate(Resources.Load<GameObject>(name));
-        instance.name = name;
-        selectedObject = UnityEditor.Selection.activeObject as GameObject;
-        if(selectedObject!=null)
+        [MenuItem("GameObject/ThemeUI/Button", priority = 0)]
+        public static void AddButton()
         {
-            instance.transform.SetParent( selectedObject.transform,false);
+            Create("ThemeButton");
 
         }
 
-        return instance;
+        [MenuItem("GameObject/ThemeUI/Panel", priority = 0)]
 
+        public static void AddPanel()
+        {
+            Create("ThemePanel");
+
+        }
+
+        public static GameObject selectedObject;
+
+        private static GameObject Create(string name)
+        {
+            GameObject instance = Instantiate(Resources.Load<GameObject>(name));
+            instance.name = name;
+            selectedObject = UnityEditor.Selection.activeObject as GameObject;
+            if (selectedObject != null)
+            {
+                instance.transform.SetParent(selectedObject.transform, false);
+
+            }
+
+            return instance;
+
+        }
     }
 }

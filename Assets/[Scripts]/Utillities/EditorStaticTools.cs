@@ -3,7 +3,8 @@ using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
-
+namespace EditorTools
+{
     public class EditorStaticTools
     {
 #if UNITY_EDITOR
@@ -55,9 +56,10 @@ using System.Collections.Generic;
 
         public static T[] GetAllInstances<T>() where T : ScriptableObject
         {
-            string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);  //FindAssets uses tags check documentation for more info
+            string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);
+            // Debug.LogError("GetAllInstances: typeof(T): " + typeof(T)+" length: "+guids.Length);
             T[] a = new T[guids.Length];
-            for (int i = 0; i < guids.Length; i++)         //probably could get optimized 
+            for (int i = 0; i < guids.Length; i++)
             {
                 string path = AssetDatabase.GUIDToAssetPath(guids[i]);
                 a[i] = AssetDatabase.LoadAssetAtPath<T>(path);
@@ -69,7 +71,7 @@ using System.Collections.Generic;
 
         public static T GetFirstInstance<T>() where T : ScriptableObject
         {
-            Debug.LogWarning("typeof(T): " + typeof(T));
+            //Debug.LogWarning("typeof(T): " + typeof(T));
             string guid = AssetDatabase.FindAssets("t:" + typeof(T).Name)[0];
             T a;
 
@@ -103,3 +105,4 @@ using System.Collections.Generic;
 #endif
     }
 
+}

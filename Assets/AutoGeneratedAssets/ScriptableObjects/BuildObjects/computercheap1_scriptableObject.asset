@@ -10,23 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1386f2c2aa8a1c842af3c72cd8f56003, type: 3}
-  m_Name: bulb6_scriptableObject
+  m_Name: computercheap1_scriptableObject
   m_EditorClassIdentifier: 
-  id: bulb6
-  objectPrefab: {fileID: 3171114842030510189, guid: 65b582eae6faf38409c4cf6ec8292edd,
+  id: computercheap1
+  objectPrefab: {fileID: 8956521850194258521, guid: 7cf9805e3cf656c4689d2d8c3f2b2552,
     type: 3}
   offset: {x: 0, y: 0, z: 0}
-  actualSize: {x: 0.1, y: 0.1, z: 0.1}
+  actualSize: {x: 0.692049, y: 0.60099, z: 0.787205}
   gridSize: {x: 1, y: 1, z: 1}
-  orientationVector: {x: 0, y: 0, z: -1}
-  isBuyable: 0
-  cost: 0
-  objectOrientation: 2
+  orientationVector: {x: 0, y: 1, z: 0}
+  cost: 650
+  objectOrientation: 1
   rotationStep: 90
   layersToBuildOn:
     serializedVersion: 2
-    m_Bits: 24576
+    m_Bits: 2099200
   obstacleLayers:
     serializedVersion: 2
-    m_Bits: 2097152
-  collsionBoundsFraction: 0.95
+    m_Bits: 2105344
+  collsionBoundsFraction: 0.9

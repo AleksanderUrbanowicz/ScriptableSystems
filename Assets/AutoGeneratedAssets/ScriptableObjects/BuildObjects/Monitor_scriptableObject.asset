@@ -10,23 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1386f2c2aa8a1c842af3c72cd8f56003, type: 3}
-  m_Name: computercheap1_scriptableObject
+  m_Name: Monitor_scriptableObject
   m_EditorClassIdentifier: 
-  id: computercheap1
-  objectPrefab: {fileID: 8956521850194258521, guid: 7cf9805e3cf656c4689d2d8c3f2b2552,
+  id: Monitor
+  objectPrefab: {fileID: 3580706390789098197, guid: 4dfc17e6e26b209439b7fbdf2359dfca,
     type: 3}
-  offset: {x: 0, y: 0, z: 0}
-  actualSize: {x: 0.692049, y: 0.60099, z: 0.787205}
-  gridSize: {x: 1, y: 1, z: 1}
+  offset: {x: 0, y: 0, z: -0.25}
+  actualSize: {x: 0.8543415, y: 0.761112, z: 0.7323532}
+  gridSize: {x: 2, y: 1, z: 1}
   orientationVector: {x: 0, y: 1, z: 0}
-  isBuyable: 0
-  cost: 650
+  cost: 300
   objectOrientation: 1
   rotationStep: 90
   layersToBuildOn:
     serializedVersion: 2
-    m_Bits: 2099200
+    m_Bits: 2048
   obstacleLayers:
     serializedVersion: 2
     m_Bits: 2105344
-  collsionBoundsFraction: 0.9
+  collsionBoundsFraction: 0.95
+  dynamicParameters:
+  - parameterType: Cleanness
+    decreaseRate: 0
+  staticParameters:
+  - parameterType: Cleanness
+  dynamicParameterTypes:
+  - Cleanness
+  staticParameterTypes:
+  - Prestige

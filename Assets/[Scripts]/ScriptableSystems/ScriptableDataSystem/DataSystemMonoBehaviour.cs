@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-
+using Gameplay;
+using Player;
 namespace ScriptableSystems
 {
     public class DataSystemMonoBehaviour : MonoBehaviour

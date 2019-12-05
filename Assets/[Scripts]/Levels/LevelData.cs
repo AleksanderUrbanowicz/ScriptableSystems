@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LevelData", menuName = "Levels/Level Data")]
-
-public class LevelData : ScriptableObject
+namespace Levels
 {
-    public string id;
-    [SceneSelector]
-    public string sceneName;
+    [CreateAssetMenu(fileName = "LevelData", menuName = "Levels/Level Data")]
+
+    public class LevelData : ScriptableObject
+    {
+        public string id;
+        [SceneSelector]
+        public string sceneName;
+    }
 }
