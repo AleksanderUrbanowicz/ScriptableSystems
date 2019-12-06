@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class ObjectTypeSelector : SelectorPropertyAttribute
+    public class ObjectTypeSelector : DefinitionsSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {

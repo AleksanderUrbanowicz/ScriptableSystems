@@ -23,7 +23,7 @@ namespace ScriptableSystems
 
         Rect mainSection;
         Rect previewGeneratorSection;
-
+        public OptionProperty option;
         private void OnGUI()
         {
             GUI.backgroundColor = backgroundColor;
@@ -151,7 +151,7 @@ namespace ScriptableSystems
                     buildObjectData.id = sceneObject.name + Random.Range(0, 9);
                 }
 
-
+               
 
                 GUILayout.Label("Size \nX: " + buildObjectData.actualSize.x + "   Y: " + buildObjectData.actualSize.y + "   Z: " + buildObjectData.actualSize.z);
                 GUILayout.Label("Grid size\nX: " + buildObjectData.gridSize.x + "   Y: " + buildObjectData.gridSize.y + "   Z: " + buildObjectData.gridSize.z);

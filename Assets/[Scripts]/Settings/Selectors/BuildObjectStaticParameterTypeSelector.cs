@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class BuildObjectStaticParameterTypeSelector : SelectorPropertyAttribute
+    public class BuildObjectStaticParameterTypeSelector : DefinitionsSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {

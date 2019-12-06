@@ -5,27 +5,11 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class GameEventSelector : PropertyAttribute
+    public class GameEventSelector : DefinitionsSelectorPropertyAttribute
     {
-        private Definitions definitionsConfig;
-        private string[] parameters;
+        
 
-        public delegate string[] GetStringList();
-        public string[] Elements
-        {
-            get
-            {
-                if (parameters != null)
-                {
-                    return parameters;
-                }
-
-                UpdateParameters();
-                return parameters;
-            }
-        }
-
-        private void UpdateParameters()
+        protected override void UpdateParameters()
         {
 #if UNITY_EDITOR
             if (definitionsConfig == null)

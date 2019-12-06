@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class MaterialTypeSelector : SelectorPropertyAttribute
+    public class MaterialTypeSelector : DefinitionsSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {

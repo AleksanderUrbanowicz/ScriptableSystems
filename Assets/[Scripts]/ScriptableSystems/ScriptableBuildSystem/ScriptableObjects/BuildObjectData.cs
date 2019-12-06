@@ -23,6 +23,8 @@ namespace ScriptableSystems
         public LayerMask obstacleLayers;
         public float collsionBoundsFraction;
 
+        public List<BuildObjectMaterialData> materialData;
+
         public List<BuildObjectDynamicParameter> dynamicParameters;
         public List<BuildObjectStaticParameter> staticParameters;
 

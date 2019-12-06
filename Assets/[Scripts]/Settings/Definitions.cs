@@ -6,15 +6,12 @@ using UnityEngine;
 namespace EditorTools
 {
     //[CreateAssetMenu(fileName = "Definitions", menuName = "Settings/Definitions")]
-    public class Definitions : ScriptableObject
+    public class Definitions : ConfigBase
     {
-
-        public CharacterType[] characterTypes;
-        public EmployeeType[] employeeTypes;
-        public GuestType[] guestTypes;
+        public static string Key = "DefinitionsConfig";
         public MaterialType[] materialTypes;
         public ObjectType[] objectTypes;
-
+        
         public BuildObjectData[] buildObjects;
         public BuildObjectCategoryData[] buildObjectCategories;
         public BuildObjectListData[] buildObjectLists;

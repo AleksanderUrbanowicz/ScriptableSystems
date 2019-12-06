@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class ScriptableEventSelector : SelectorPropertyAttribute
+    public class ScriptableEventSelector : DefinitionsSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {

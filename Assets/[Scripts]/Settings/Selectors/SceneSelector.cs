@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class SceneSelector : SelectorPropertyAttribute
+    public class SceneSelector : DefinitionsSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {

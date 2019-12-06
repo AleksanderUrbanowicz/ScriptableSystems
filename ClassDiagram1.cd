@@ -1,0 +1,676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Characters.CharacterDataBase" Collapsed="true">
+    <Position X="9.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\CharacterDataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.CharactersConfig" Collapsed="true">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAKAAAAAAAAAAABAAAAAAAAABAAEAEAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\CharactersConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.CharacterType" Collapsed="true">
+    <Position X="29.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\CharacterType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.EmployeeData" Collapsed="true">
+    <Position X="8.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\EmployeeData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.EmployeeType" Collapsed="true">
+    <Position X="29.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\EmployeeType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.GuestData" Collapsed="true">
+    <Position X="10.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\GuestData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Characters.GuestType" Collapsed="true">
+    <Position X="31" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Characters\GuestType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildSystemRaycast" Collapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABIAAAAAAQAAAAAAAAAAASoQQAAkAABBCAAAAIAA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\BuildSystemRaycast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.RaycastExecutor" Collapsed="true">
+    <Position X="29.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAQAAAIAAAAAAACIAQAAEAABBCBAAAIAA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\RaycastExecutor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.SpawnerHelper" Collapsed="true">
+    <Position X="25.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Gameplay\SpawnerHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ThemeUI" Collapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\[Scripts]\Menu\ThemeUI\ThemeUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ThemeUIButton" Collapsed="true">
+    <Position X="8.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAFAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Menu\ThemeUI\ThemeUIButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ThemeUIData" Collapsed="true">
+    <Position X="27.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACABAEAAUAAAAAQAAAEAAAABAAAAAAAIggI=</HashCode>
+      <FileName>Assets\[Scripts]\Menu\ThemeUI\ThemeUIData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ThemeUIPanel" Collapsed="true">
+    <Position X="10.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Menu\ThemeUI\ThemeUIPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildSystemMonoBehaviour" Collapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>yQSUBCAACCAFKEAACCiAEQJKYAACo4kAUhISgCBEICI=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\BuildSystemMonoBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableBuildSystem" Collapsed="true">
+    <Position X="2.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAADAAAAABEQAAAAAAEAAAAAAAAIAAgpJAAACAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableBuildSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectCategoryData" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectCategoryData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectData" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAQCAAAAgQAMAAIAAgCAAAQDAAAAgAAAAAACgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectDynamicParameter" Collapsed="true">
+    <Position X="29.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectDynamicParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectDynamicParameterType" Collapsed="true">
+    <Position X="31" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectDynamicParameterType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectListData" Collapsed="true">
+    <Position X="34.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectListData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectMaterialData" Collapsed="true">
+    <Position X="36.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAACAAAIAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectMaterialData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectMaterialSet" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectMaterialSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectParameterTypeBase" Collapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectParameterTypeBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectStaticParameter" Collapsed="true">
+    <Position X="32.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectStaticParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.BuildObjectStaticParameterType" Collapsed="true">
+    <Position X="34.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\BuildObjectStaticParameterType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.MaterialType" Collapsed="true">
+    <Position X="25.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\MaterialType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ObjectType" Collapsed="true">
+    <Position X="31" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableBuildSystem\ScriptableObjects\ObjectType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.DataSystemMonoBehaviour" Collapsed="true">
+    <Position X="34.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAIAABABAAIAAABAAAEAAAAAAEAACAABAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableDataSystem\DataSystemMonoBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ObjectData" Collapsed="true">
+    <Position X="29.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAIAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableDataSystem\ObjectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableDataSystem" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAACAAAAAAAAAAAgAAAAgAAAAAAQ=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableDataSystem\ScriptableDataSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.GameEvent" Collapsed="true">
+    <Position X="34.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAgAAAAAAQAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableEvents\GameEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.GameEventListener" Collapsed="true">
+    <Position X="36.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAABAAAAAggAAAAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableEvents\GameEventListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableEvent" Collapsed="true">
+    <Position X="31" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAAAAAAAgAAAAAAQAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableEvents\ScriptableEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableEventListener" Collapsed="true">
+    <Position X="32.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAADAAAAAAAABAAAAAggAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableEvents\ScriptableEventListener.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableSelectSystem" Collapsed="true">
+    <Position X="5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQIAAAAEAAAQAAgAAAAAAAACAAAAAAABBAQAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableSelectSystem\ScriptableSelectSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.SelectSystemMonoBehaviour" Collapsed="true">
+    <Position X="24" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQABAEAAABACEAAgAAAAAAAACAAAMAIARBCQAAAABY=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableSelectSystem\SelectSystemMonoBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableSystem" Collapsed="true">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAIQAAAAAAAAQAAAAAAAAAAAAAAAAAEgA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScriptableSystems.ScriptableSystemManager" Collapsed="true">
+    <Position X="36.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAEAAAAAAAAAAAAAAAAAAAAAAAAACAABAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableSystemManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Levels.LevelData" Collapsed="true">
+    <Position X="36.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Levels\LevelData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player.PlayerData" Collapsed="true">
+    <Position X="24" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\ScriptableSystems\ScriptableDataSystem\PlayerData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.Definitions" Collapsed="true">
+    <Position X="36.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAIRABABAAAAAAAIAAAAAgAAEAAACAAAIAAAAACQA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Definitions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.GameSettings" Collapsed="true">
+    <Position X="29.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAAAgCACAAAAABAgIQACIAAAAGAAEgAAACIAAIACQA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\GameSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectCategorySelector" Collapsed="true">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectCategorySelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectCategorySelectorDrawer" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectCategorySelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectDynamicParameterTypeSelector" Collapsed="true">
+    <Position X="8" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectDynamicParameterTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectDynamicParameterTypeSelectorDrawer" Collapsed="true">
+    <Position X="32.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectDynamicParameterTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectMaterialSetSelector" Collapsed="true">
+    <Position X="12.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectMaterialSetSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectMaterialSetDrawer" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectMaterialSetSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectSelector" Collapsed="true">
+    <Position X="29.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAACCAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectSelectorDrawer" Collapsed="true">
+    <Position X="31" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectStaticParameterTypeSelector" Collapsed="true">
+    <Position X="21.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectStaticParameterTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.BuildObjectStaticParameterTypeSelectorDrawer" Collapsed="true">
+    <Position X="36.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\BuildObjectStaticParameterTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.CharactersSelectorPropertyAttribute" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAACCAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\CharactersSelectorPropertyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.CharacterTypeSelector" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\CharacterTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.CharacterTypeSelectorDrawer" Collapsed="true">
+    <Position X="31" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\CharacterTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.DefinitionsSelectorPropertyAttribute" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAACCAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\DefinitionsSelectorPropertyAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.EmployeeTypeSelector" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\EmployeeTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.EmployeeTypeSelectorDrawer" Collapsed="true">
+    <Position X="31" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\EmployeeTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.GameEventSelector" Collapsed="true">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\GameEventSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.GameEventSelectorSelectorDrawer" Collapsed="true">
+    <Position X="25.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\GameEventSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.GuestTypeSelector" Collapsed="true">
+    <Position X="5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\GuestTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.GuestTypeSelectorDrawer" Collapsed="true">
+    <Position X="32.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\GuestTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.LevelSelector" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\LevelSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.LevelSelectorDrawer" Collapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\LevelSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.MaterialTypeSelector" Collapsed="true">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\MaterialTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.MaterialTypeSelectorDrawer" Collapsed="true">
+    <Position X="27.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\MaterialTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ObjectTypeSelector" Collapsed="true">
+    <Position X="14.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\ObjectTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ObjectTypeSelectorDrawer" Collapsed="true">
+    <Position X="32.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\ObjectTypeSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.SceneSelector" Collapsed="true">
+    <Position X="17" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\SceneSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ScriptableEventSelector" Collapsed="true">
+    <Position X="19.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\ScriptableEventSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ScriptableEventSelectorDrawer" Collapsed="true">
+    <Position X="34.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\ScriptableEventSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ThemeUIDataSelector" Collapsed="true">
+    <Position X="1.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\ThemeUIDataSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.ThemeUIDataSelectorDrawer" Collapsed="true">
+    <Position X="29.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\Selectors\ThemeUIDataSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.EditorColors" Collapsed="true">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\EditorColors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.EditorColorsCustomizer" Collapsed="true">
+    <Position X="25.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\EditorColors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.EditorStaticTools" Collapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAIAAAIAAAAAAAAAAAAAAAAAAAABCAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\EditorStaticTools.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.LabelledBool" Collapsed="true">
+    <Position X="34.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\LabelledBool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.OptionProperty" Collapsed="true">
+    <Position X="34.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\OptionProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EditorTools.PopupAttribute" Collapsed="true">
+    <Position X="27.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\PopupAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gameplay.GameManager" Collapsed="true">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAASAEAAAQAAIAABAAAADAAAAAAIAAQIAABUA=</HashCode>
+      <FileName>Assets\[Scripts]\Settings\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConditionalHideAttribute" Collapsed="true">
+    <Position X="32.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\ConditionalHideAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySurvivalScripts.FPSAnimator_SMB" Collapsed="true">
+    <Position X="35.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\ZZZAssetStorePacks\Full Body FPS Controller\Full Body FPS Controller\Scripts\FPSAnimator_SMB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySurvivalScripts.PlayerCamera" Collapsed="true">
+    <Position X="37.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQLAAAAEqKwAAAAAAAAAAAAAQYAARAEACQAEgQAAEA=</HashCode>
+      <FileName>Assets\ZZZAssetStorePacks\Full Body FPS Controller\Full Body FPS Controller\Scripts\PlayerCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EasySurvivalScripts.PlayerMovement" Collapsed="true">
+    <Position X="33.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QkQAKEAAQiAAASAAIIwIEBgEAAMAKAAAEABACAIAAAA=</HashCode>
+      <FileName>Assets\ZZZAssetStorePacks\Full Body FPS Controller\Full Body FPS Controller\Scripts\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ScriptableSystems.ObjectOrientation" Collapsed="true">
+    <Position X="19.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAQAAAABAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScriptableSystems.ObjectRotation" Collapsed="true">
+    <Position X="21" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAQAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScriptableSystems.ScriptableEventType" Collapsed="true">
+    <Position X="12.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiAABA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScriptableSystems.ScriptableExecuteType" Collapsed="true">
+    <Position X="14" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAEAAAAAAABAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScriptableSystems.ScriptableSystemType" Collapsed="true">
+    <Position X="15.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScriptableSystems.LogLevel" Collapsed="true">
+    <Position X="17.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAQAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScriptableSystems.ButtonType" Collapsed="true">
+    <Position X="12.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAQAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ScriptableSystems.PanelType" Collapsed="true">
+    <Position X="22.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EditorTools.ColorPurpose" Collapsed="true">
+    <Position X="15.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAIABAAEAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\[Scripts]\Utillities\EditorColors.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EasySurvivalScripts.CameraPerspective" Collapsed="true">
+    <Position X="14" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\ZZZAssetStorePacks\Full Body FPS Controller\Full Body FPS Controller\Scripts\PlayerCamera.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EasySurvivalScripts.PlayerStates" Collapsed="true">
+    <Position X="24.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAJAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\ZZZAssetStorePacks\Full Body FPS Controller\Full Body FPS Controller\Scripts\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

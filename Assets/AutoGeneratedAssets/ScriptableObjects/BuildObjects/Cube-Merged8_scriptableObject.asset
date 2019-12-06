@@ -29,6 +29,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2097152
   collsionBoundsFraction: 0.95
+  materialData:
+  - defaultMaterial: {fileID: 2100000, guid: 0be6d936dc760ef4ab80c8c945efd10e, type: 2}
+    dirtyMask: {fileID: 2800000, guid: c29269517f01ce149908a918256f667b, type: 3}
+    damagedMask: {fileID: 2800000, guid: 640f0ff3ac1d6c84b960940a2657c3b7, type: 3}
+    materialSet: FurnitureWood1
+  - defaultMaterial: {fileID: 2100000, guid: a29d4a4ae5189b0409981be9fec5498d, type: 2}
+    dirtyMask: {fileID: 2800000, guid: c29269517f01ce149908a918256f667b, type: 3}
+    damagedMask: {fileID: 2800000, guid: 640f0ff3ac1d6c84b960940a2657c3b7, type: 3}
+    materialSet: FurnitureCloth1
   dynamicParameters:
   - parameterType: Cleanness
     initValue: 100

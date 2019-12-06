@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class LevelSelector : SelectorPropertyAttribute
+    public class LevelSelector : DefinitionsSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {

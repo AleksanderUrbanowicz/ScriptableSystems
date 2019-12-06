@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class ThemeUIDataSelector : SelectorPropertyAttribute
+    public class ThemeUIDataSelector : DefinitionsSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {

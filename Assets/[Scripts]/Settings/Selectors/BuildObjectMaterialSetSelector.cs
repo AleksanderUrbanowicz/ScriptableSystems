@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class BuildObjectMaterialSetSelector : SelectorPropertyAttribute
+    public class BuildObjectMaterialSetSelector : DefinitionsSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {

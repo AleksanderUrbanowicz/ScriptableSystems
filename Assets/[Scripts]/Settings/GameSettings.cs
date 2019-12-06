@@ -20,7 +20,7 @@ namespace EditorTools
         [CharacterTypeSelector]
         public string characterType;
 
-        [EmployeeTypeSelector]
+       [EmployeeTypeSelector]
         public string employeeType;
 
         [GuestTypeSelector]
@@ -46,6 +46,7 @@ namespace EditorTools
 
         [LevelSelector]
         public string level;
+
 
         [GameEventSelector]
         public string gameEvent;

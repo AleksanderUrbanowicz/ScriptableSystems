@@ -12,17 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b5baa52b3e9d9c429bfe9e4891171cb, type: 3}
   m_Name: Definitions
   m_EditorClassIdentifier: 
-  characterTypes:
-  - id: Guest
-  - id: Employee
-  employeeTypes:
-  - id: Maid
-  - id: ServiceWorker
-  - id: Waiter
-  - id: Receptionist
-  guestTypes:
-  - id: Default
-  - id: Pedantic
+  key: DefinitionsConfig
   materialTypes:
   - id: Wood
   - id: Cloth

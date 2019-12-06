@@ -1,27 +1,28 @@
-﻿using System;
+﻿using Characters;
+using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
 namespace EditorTools
 {
-    public class EmployeeTypeSelector : SelectorPropertyAttribute
+    public class EmployeeTypeSelector : CharactersSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {
 
 #if UNITY_EDITOR
-            if (definitionsConfig == null)
+            if (charactersConfig == null)
             {
-                definitionsConfig = EditorStaticTools.GetFirstInstance<Definitions>();
+                charactersConfig = EditorStaticTools.GetFirstInstance<CharactersConfig>();
             }
 
 #endif
 
-            if (definitionsConfig != null)
+            if (charactersConfig != null)
             {
 
-                parameters = definitionsConfig.employeeTypes.Select(x => x.id).ToArray();
+                parameters = charactersConfig.employeeTypes.Select(x => x.id).ToArray();
 
             }
 

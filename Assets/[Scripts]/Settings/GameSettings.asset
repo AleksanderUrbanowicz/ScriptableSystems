@@ -18,8 +18,8 @@ MonoBehaviour:
     type: 2}
   scriptableSelectSystem: {fileID: 11400000, guid: 639b8e7138a82f54fa3d30de1db69521,
     type: 2}
-  characterType: Guest
-  employeeType: Receptionist
+  characterType: Employee
+  employeeType: Maid2
   guestType: Pedantic
   materialType: Wood
   objectType: Furniture
