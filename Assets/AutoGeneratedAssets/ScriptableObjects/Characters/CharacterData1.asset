@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b681e91a69773fb4db5df3407ede829f, type: 3}
-  m_Name: BuildObjectStaticParameterTypePrestige
+  m_Script: {fileID: 11500000, guid: 255d32124cb12f8408d1740433b32cf0, type: 3}
+  m_Name: CharacterData1
   m_EditorClassIdentifier: 
-  id: Prestige
+  id: CharacterData1
+  characterType: Employee
+  displayName: Character Data 1
+  prefab: {fileID: 0}

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d25447c790d16574e9a2d57a1d487df3, type: 3}
+  m_Name: MainConfigNew
+  m_EditorClassIdentifier: 
+  key: 
+  characterTypes: []
+  employeeTypes: []
+  guestTypes: []
+  employeeDatas:
+  - {fileID: 11400000, guid: df582fc18f17be14bbc52b96d0e5e385, type: 2}
+  - {fileID: 11400000, guid: c2a3536eec73cc448ad2fb04099620ec, type: 2}
+  - {fileID: 11400000, guid: 3bca994c6ce2a9a489f7661ae02bce87, type: 2}
+  guestDatas:
+  - {fileID: 11400000, guid: ef567bc064ace0145825105e2759898b, type: 2}
+  - {fileID: 11400000, guid: 49f58ba7d8fd1194aa7379b10beac945, type: 2}
+  characterDatas:
+  - {fileID: 11400000, guid: f956af72b6cd44a49b50ff45c879c2d9, type: 2}
+  - {fileID: 11400000, guid: df582fc18f17be14bbc52b96d0e5e385, type: 2}
+  - {fileID: 11400000, guid: c2a3536eec73cc448ad2fb04099620ec, type: 2}
+  - {fileID: 11400000, guid: 3bca994c6ce2a9a489f7661ae02bce87, type: 2}
+  - {fileID: 11400000, guid: ef567bc064ace0145825105e2759898b, type: 2}
+  - {fileID: 11400000, guid: 49f58ba7d8fd1194aa7379b10beac945, type: 2}
+  colorsSet: []
+  guestColor: {r: 0, g: 0, b: 0, a: 0}
+  employeeColor: {r: 0, g: 0, b: 0, a: 0}
+  option1:
+    option: 1
+    defaultOption: 1
+  labelledBools: []
+  generatorTabOpen: 0
+  colorsCustomizerTabOpen: 0
+  definitionsTabOpen: 0

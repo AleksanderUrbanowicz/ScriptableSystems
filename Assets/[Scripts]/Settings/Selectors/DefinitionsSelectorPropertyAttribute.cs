@@ -37,7 +37,7 @@ namespace EditorTools
             if (definitionsConfig != null)
             {
 
-                parameters = definitionsConfig.gameEvents.Select(x => x.id).ToArray();
+                affectedParameters = definitionsConfig.gameEvents.Select(x => x.id).ToArray();
 
             }
             */

@@ -4,11 +4,9 @@ using System;
 namespace ScriptableSystems
 {
     [Serializable]
-    public class BuildObjectDynamicParameter
+    public class BuildObjectDynamicParameter : DynamicParameter
     {
         [BuildObjectDynamicParameterTypeSelector]
         public string parameterType;
-        public float initValue;
-        public float decreaseRate;
     }
 }

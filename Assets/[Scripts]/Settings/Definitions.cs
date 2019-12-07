@@ -22,7 +22,7 @@ namespace EditorTools
 
         public LevelData[] levels;
         public BuildObjectDynamicParameterType[] buildObjectDynamicParameterTypes;
-        public BuildObjectStaticParameterType[] buildObjectStaticParameterTypes;
+        public HotelParameterType[] hotelParameterTypes;
 
         private void OnEnable()
         {
@@ -45,7 +45,7 @@ namespace EditorTools
             levels = EditorStaticTools.GetAllInstances<LevelData>();
 
             buildObjectDynamicParameterTypes = EditorStaticTools.GetAllInstances<BuildObjectDynamicParameterType>();
-            buildObjectStaticParameterTypes = EditorStaticTools.GetAllInstances<BuildObjectStaticParameterType>();
+            hotelParameterTypes = EditorStaticTools.GetAllInstances<HotelParameterType>();
 
 #endif
         }

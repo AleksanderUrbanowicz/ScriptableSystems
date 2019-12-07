@@ -45,8 +45,8 @@ MonoBehaviour:
   - parameterType: Durability
     initValue: 100
     decreaseRate: 0.25
-  staticParameters:
-  - parameterType: Prestige
-    value: 1
-  - parameterType: Hygiene
-    value: 1
+  hotelParameters:
+  - parameterType: Amenities
+    value: 0
+  - parameterType: Amenities
+    value: 0

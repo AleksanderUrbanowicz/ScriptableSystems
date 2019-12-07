@@ -55,7 +55,7 @@ namespace EditorTools
    if (configBase != null)
    {
 
-       parameters = configBase.gameEvents.Select(x => x.id).ToArray();
+       affectedParameters = configBase.gameEvents.Select(x => x.id).ToArray();
 
    }
    */

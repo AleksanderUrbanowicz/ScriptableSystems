@@ -1,14 +1,12 @@
-﻿
-using Characters;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 
 namespace EditorTools
 
 {
-        public class CharactersSelectorPropertyAttribute : PropertyAttribute
+    public class CharactersSelectorPropertyAttribute : PropertyAttribute
         {
-            protected CharactersConfig charactersConfig;
+            protected MainConfigNew charactersConfig;
             protected string[] parameters;
 
             public delegate string[] GetStringList();
@@ -40,7 +38,7 @@ namespace EditorTools
                 if (definitionsConfig != null)
                 {
 
-                    parameters = definitionsConfig.gameEvents.Select(x => x.id).ToArray();
+                    affectedParameters = definitionsConfig.gameEvents.Select(x => x.id).ToArray();
 
                 }
                 */

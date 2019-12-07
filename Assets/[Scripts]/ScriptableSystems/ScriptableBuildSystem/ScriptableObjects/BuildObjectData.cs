@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using EditorTools;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ScriptableSystems
@@ -26,7 +27,7 @@ namespace ScriptableSystems
         public List<BuildObjectMaterialData> materialData;
 
         public List<BuildObjectDynamicParameter> dynamicParameters;
-        public List<BuildObjectStaticParameter> staticParameters;
+        public List<HotelParameter> hotelParameters;
 
         
         public BuildObjectData()

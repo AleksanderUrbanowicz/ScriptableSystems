@@ -19,7 +19,6 @@ namespace ScriptableSystems
         Texture2D mainTexture;
         Color mainColor = new Color(0.83f, 0.5f, 0.5f, 0.9f);
         Color backgroundColor = Color.white;
-        //Color backgroundColor = Color.white;
 
         Rect mainSection;
         Rect previewGeneratorSection;
@@ -169,11 +168,7 @@ namespace ScriptableSystems
                     buildObjectData.obstacleLayers = defaultObstaclesLayer;
                 }
                 GUI.backgroundColor = Color.red;
-                //if (sceneObject != null)
-                //{
-                //   GUI.backgroundColor = Color.green;
-
-                //}
+                
 
 
                 if (buildObjectData.gridSize != Vector3.zero)
@@ -182,12 +177,7 @@ namespace ScriptableSystems
 
                 }
 
-                // else
-                //  {
-                //      GUI.backgroundColor = Color.red;
-
-
-                //  }
+           
 
                 if (GUILayout.Button("Create Prefab"))
                 {

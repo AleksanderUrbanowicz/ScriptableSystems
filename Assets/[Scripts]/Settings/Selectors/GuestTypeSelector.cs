@@ -1,5 +1,4 @@
-﻿using Characters;
-using System;
+﻿using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -14,7 +13,7 @@ namespace EditorTools
 #if UNITY_EDITOR
             if (charactersConfig == null)
             {
-                charactersConfig = EditorStaticTools.GetFirstInstance<CharactersConfig>();
+                charactersConfig = EditorStaticTools.GetFirstInstance<MainConfigNew>();
             }
 
 #endif

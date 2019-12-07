@@ -20,6 +20,8 @@ namespace EditorTools
         [CharacterTypeSelector]
         public string characterType;
 
+
+
        [EmployeeTypeSelector]
         public string employeeType;
 
@@ -62,8 +64,8 @@ namespace EditorTools
         [BuildObjectDynamicParameterTypeSelector]
         public string buildObjectDynamicParameterTypes;
 
-        [BuildObjectStaticParameterTypeSelector]
-        public string buildObjectStaticParameterTypes;
+        [HotelParameterTypeSelector]
+        public string hotelParameterType;
 
         private void OnEnable()
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EditorTools
 {
-    public class BuildObjectStaticParameterTypeSelector : DefinitionsSelectorPropertyAttribute
+    public class HotelParameterTypeSelector : DefinitionsSelectorPropertyAttribute
     {
         protected override void UpdateParameters()
         {
@@ -21,7 +21,7 @@ namespace EditorTools
             if (definitionsConfig != null)
             {
 
-                parameters = definitionsConfig.buildObjectStaticParameterTypes.Select(x => x.id).ToArray();
+                parameters = definitionsConfig.hotelParameterTypes.Select(x => x.id).ToArray();
 
             }
 
@@ -30,13 +30,13 @@ namespace EditorTools
 
 
 #if UNITY_EDITOR
-    [CustomPropertyDrawer(typeof(BuildObjectStaticParameterTypeSelector))]
-    public class BuildObjectStaticParameterTypeSelectorDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(HotelParameterTypeSelector))]
+    public class HotelParameterTypeSelectorDrawer : PropertyDrawer
     {
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            var stringInList = attribute as BuildObjectStaticParameterTypeSelector;
+            var stringInList = attribute as HotelParameterTypeSelector;
             var list = stringInList.Elements;
             if (property.propertyType == SerializedPropertyType.String)
             {

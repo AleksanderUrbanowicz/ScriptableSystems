@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EditorTools;
+using System;
+using System.Collections.Generic;
 
 namespace Characters
 {
@@ -6,5 +8,8 @@ namespace Characters
     public class EmployeeType
     {
         public string id;
+
+        [BuildObjectDynamicParameterTypeSelector]
+        public List<string> affectedParameters;
     }
 }

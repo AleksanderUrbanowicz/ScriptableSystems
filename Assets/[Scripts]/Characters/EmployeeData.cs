@@ -11,9 +11,17 @@ namespace Characters
         
         [EmployeeTypeSelector]
         public string employeeType;
-        public float wage;
+        public float salary;
+        [RangeAttribute(0.0f,100.0f)]
         public float skill;
+        [RangeAttribute(0.0f, 10.0f)]
+        public float speed;
 
+
+        public EmployeeData()
+        {
+            base.characterType = "Employee";
+        }
 
     }
 }
